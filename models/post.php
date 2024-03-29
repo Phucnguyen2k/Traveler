@@ -1,4 +1,6 @@
 <?php
+require_once ('models/category.php');
+require_once ('models/member.php');
 class Post
 {
     const TABLENAME = 'posts';
@@ -11,6 +13,10 @@ class Post
     public $datecreated;
     public $createdby;
 
+    //object 
+    public $category;
+    public $member;
+
     public function __construct($id, $title, $picture, $content, $categoryid, $datecreated, $createdby)
     {
         $this->id = $id;
@@ -20,6 +26,8 @@ class Post
         $this->categoryid = $categoryid;
         $this->datecreated = date_create($datecreated);
         $this->createdby = $createdby;
+        $this->category = Category::get($categoryid);
+        $this->member = Member::get($createdby);
     }
 
     static function all()
@@ -27,7 +35,6 @@ class Post
         $list = [];
         $db = DB::getInstance();
         $req = $db->query('SELECT * FROM posts');
-
         foreach ($req->fetchAll() as $item) {
             $list[] = new Post(
                 $item['id'],
@@ -36,10 +43,20 @@ class Post
                 $item['content'],
                 $item['categoryid'],
                 $item['datecreated'],
+                $item['createdby'] .
+                $item['datecreated'],
                 $item['createdby']
             );
         }
 
         return $list;
+    }
+
+    static function get($id)
+    {
+        $db = DB::getInstance();
+        $req = $db->query('SELECT * FROM posts where id=' . $id);
+        $item = $req->fetch();
+        return new Post($item['id'], $item['title'], $item['picture'], $item['content'], $item['categoryid'], $item['datecreated'], $item['createdby']);
     }
 }

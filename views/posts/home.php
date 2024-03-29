@@ -13,7 +13,6 @@
 </div>
 <!-- Header End -->
 
-
 <!-- Booking Start -->
 <div class="container-fluid booking mt-5 pb-5">
     <div class="container pb-5">
@@ -87,21 +86,25 @@
                                         alt="">
                                     <div class="blog-date">
                                         <h6 class="font-weight-bold mb-n1">
-                                            <?php echo date_format($post->datecreated, 'd') ?>
+                                            <?php echo date_format($post->datecreated, 'd'); ?>
                                         </h6>
                                         <small class="text-white text-uppercase">
-                                            <?php echo date_format($post->datecreated, 'M') ?>
+                                            <?php echo date_format($post->datecreated, 'M'); ?>
                                         </small>
                                     </div>
                                 </div>
                                 <div class="bg-white p-4">
                                     <div class="d-flex mb-2">
-                                        <a class="text-primary text-uppercase text-decoration-none" href="">Admin</a>
+                                        <a class="text-primary text-uppercase text-decoration-none" href="">
+                                            <?php echo $post->member->title; ?>
+                                        </a>
                                         <span class="text-primary px-2">|</span>
-                                        <a class="text-primary text-uppercase text-decoration-none" href="">Tours &
-                                            Travel</a>
+                                        <a class="text-primary text-uppercase text-decoration-none" href="">
+                                            <?php echo $post->category->title; ?>
+                                        </a>
                                     </div>
-                                    <a class="h5 m-0 text-decoration-none" href="">
+                                    <a class="h5 m-0 text-decoration-none"
+                                        href="index.php?controller=posts&action=details&id=<?php echo $post->id ?>">
                                         <?php echo $post->title; ?>
                                     </a>
                                 </div>
@@ -180,11 +183,18 @@
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h4>
                     <div class="bg-white" style="padding: 30px;">
                         <ul class="list-inline m-0">
-                            <li class="mb-3 d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Web
-                                    Design</a>
-                                <span class="badge badge-primary badge-pill">150</span>
-                            </li>
+                            <?php
+                            foreach ($categories as $category) {
+
+                                ?>
+                                <li class="mb-3 d-flex justify-content-between align-items-center">
+                                    <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Web
+                                        Design</a>
+                                    <span class="badge badge-primary badge-pill">150</span>
+                                </li>
+                                <?php
+                            }
+                            ?>
                             <li class="mb-3 d-flex justify-content-between align-items-center">
                                 <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Web
                                     Development</a>

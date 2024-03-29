@@ -2,7 +2,7 @@
 class Member
 {
     public $id;
-    public $Name;
+    public $name;
 
     function __construct($id, $Name)
     {
@@ -21,5 +21,12 @@ class Member
         }
 
         return $list;
+    }
+    static function get($id)
+    {
+        $db = DB::getInstance();
+        $req = $db->query('SeLECT * FROM members WHERE id = ' . $id);
+        $item = $req->fetch();
+        return new Category($item['id'], $item['name']);
     }
 }
