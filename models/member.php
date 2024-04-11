@@ -25,7 +25,7 @@ class Member
     static function get($id)
     {
         $db = DB::getInstance();
-        $req = $db->query('SeLECT * FROM members WHERE id = ' . $id);
+        $req = $db->query('SELECT * FROM members WHERE id = ' . $id);
         $item = $req->fetch();
         return new Category($item['id'], $item['name']);
     }

@@ -41,11 +41,11 @@
 layoutParts('booking');
 layoutParts('about');
 layoutParts('feature');
+require_once ("views\layouts\layoutPart\blog.php");
 layoutParts('destination');
 layoutParts('service');
 layoutParts('package');
-layoutParts('registration');
 layoutParts('team');
 layoutParts('testimonial');
-layoutParts('blog');
+layoutParts('registration');
 ?>

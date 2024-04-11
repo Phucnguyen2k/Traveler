@@ -28,6 +28,7 @@ class Post
         $this->createdby = $createdby;
         $this->category = Category::get($categoryid);
         $this->member = Member::get($createdby);
+
     }
 
     static function all()
@@ -43,8 +44,6 @@ class Post
                 $item['content'],
                 $item['categoryid'],
                 $item['datecreated'],
-                $item['createdby'] .
-                $item['datecreated'],
                 $item['createdby']
             );
         }
@@ -52,11 +51,22 @@ class Post
         return $list;
     }
 
-    static function get($id)
+    static function get($postId)
     {
         $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM posts where id=' . $id);
-        $item = $req->fetch();
-        return new Post($item['id'], $item['title'], $item['picture'], $item['content'], $item['categoryid'], $item['datecreated'], $item['createdby']);
+        $query = 'SELECT * FROM posts WHERE id = :post_id';
+        $stmt = $db->prepare($query);
+        $stmt->execute(['post_id' => $postId]);
+        $item = $stmt->fetch();
+
+        return new Post(
+            $item['id'],
+            $item['title'],
+            $item['picture'],
+            $item['content'],
+            $item['categoryid'],
+            $item['datecreated'],
+            $item['createdby']
+        );
     }
 }

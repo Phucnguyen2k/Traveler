@@ -19,7 +19,11 @@ class PostsController extends BaseController
     {
         $id = $_GET["id"];
         $post = Post::get($id);
-        $data = array('post' => $post);
+        $posts = Post::all();
+        $data = array(
+            'post' => $post,
+            'posts' => $posts
+        );
         $this->render('details', $data);
     }
 }

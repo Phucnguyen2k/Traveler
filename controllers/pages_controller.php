@@ -1,5 +1,7 @@
 <?php
 require_once ('controllers/base_controller.php');
+require_once ('models/post.php');
+
 // require_once ('controllers/post_controller.php');
 
 
@@ -18,8 +20,10 @@ class PagesController extends BaseController
 
     public function home()
     {
+        $posts = Post::all();
         $data = array(
-            'titlePage' => 'Home'
+            'titlePage' => 'Home',
+            'posts' => $posts
         );
         $this->render('home', $data, false);
     }
@@ -29,7 +33,7 @@ class PagesController extends BaseController
             'titlePage' => 'About',
             'header' => 'ABOUT'
         );
-        $this->render('About', $data, true);
+        $this->render('about', $data, true);
     }
     public function services()
     {

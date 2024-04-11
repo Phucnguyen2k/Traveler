@@ -35,7 +35,7 @@
                 <!-- Blog Detail End -->
 
                 <!-- Comment List Start -->
-                <div class="bg-white" style="padding: 30px; margin-bottom: 30px;">
+                <!-- <div class="bg-white" style="padding: 30px; margin-bottom: 30px;">
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">3 Comments</h4>
                     <div class="media mb-4">
                         <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
@@ -70,11 +70,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- Comment List End -->
 
                 <!-- Comment Form Start -->
-                <div class="bg-white mb-3" style="padding: 30px;">
+                <!-- <div class="bg-white mb-3" style="padding: 30px;">
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h4>
                     <form>
                         <div class="form-group">
@@ -179,27 +179,22 @@
                 <!-- Recent Post -->
                 <div class="mb-5">
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>
-                    <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                        <img class="img-fluid" src="img/blog-100x100.jpg" alt="">
-                        <div class="pl-3">
-                            <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                            <small>Jan 01, 2050</small>
-                        </div>
-                    </a>
-                    <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                        <img class="img-fluid" src="img/blog-100x100.jpg" alt="">
-                        <div class="pl-3">
-                            <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                            <small>Jan 01, 2050</small>
-                        </div>
-                    </a>
-                    <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                        <img class="img-fluid" src="img/blog-100x100.jpg" alt="">
-                        <div class="pl-3">
-                            <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                            <small>Jan 01, 2050</small>
-                        </div>
-                    </a>
+                    <?php
+                    foreach ($posts as $post) {
+
+                        ?>
+                        <a class="d-flex align-items-center text-decoration-none bg-white mb-3"
+                            href="index.php?controller=posts&action=details&id=<?php echo $post->id ?>">
+                            <img style="width: 100px; height: 100px;" class="img-fluid"
+                                src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                            <div class="pl-3">
+                                <h6 class="m-1"><?php echo $post->title; ?></h6>
+                                <small><?php echo date_format($post->datecreated, 'd F Y'); ?></small>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
 
                 <!-- Tag Cloud -->

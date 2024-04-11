@@ -26,7 +26,7 @@ class Category
     static function get($id)
     {
         $db = DB::getInstance();
-        $req = $db->query('SeLECT * FROM categories WHERE id = ' . $id);
+        $req = $db->query('SELECT * FROM categories WHERE id = ' . $id);
         $item = $req->fetch();
         return new Category($item['id'], $item['title']);
     }
