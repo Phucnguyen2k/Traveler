@@ -14,7 +14,7 @@
 <!-- Header End -->
 
 <!-- Booking Start -->
-<div class="container-fluid booking mt-5 pb-5">
+<div class="container-fluid booking mt-5">
     <div class="container pb-5">
         <div class="bg-light shadow" style="padding: 30px;">
             <div class="row align-items-center" style="min-height: 60px;">
@@ -70,7 +70,7 @@
 
 
 <!-- Blog Start -->
-<div class="container-fluid py-5">
+<div class="container-fluid">
     <div class="container py-5">
         <div class="row">
             <div class="col-lg-8">
@@ -184,38 +184,19 @@
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h4>
                     <div class="bg-white" style="padding: 30px;">
                         <ul class="list-inline m-0">
-                            <?php
-                            foreach ($categories as $category) {
+
+                            <?php foreach ($tags as $tag):
 
                                 ?>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Web
-                                        Design</a>
-                                    <span class="badge badge-primary badge-pill">150</span>
+                                    <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>
+                                        <?php echo $tag->id; ?></a>
+                                    <span class="badge badge-primary badge-pill"><?php echo $tag->title; ?></span>
                                 </li>
-                                <?php
-                            }
-                            ?>
-                            <li class="mb-3 d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Web
-                                    Development</a>
-                                <span class="badge badge-primary badge-pill">131</span>
-                            </li>
-                            <li class="mb-3 d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Online
-                                    Marketing</a>
-                                <span class="badge badge-primary badge-pill">78</span>
-                            </li>
-                            <li class="mb-3 d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Keyword
-                                    Research</a>
-                                <span class="badge badge-primary badge-pill">56</span>
-                            </li>
-                            <li class="d-flex justify-content-between align-items-center">
-                                <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>Email
-                                    Marketing</a>
-                                <span class="badge badge-primary badge-pill">98</span>
-                            </li>
+                            <?php endforeach; ?>
+
+
+
                         </ul>
                     </div>
                 </div>
@@ -223,41 +204,24 @@
                 <!-- Recent Post -->
                 <div class="mb-5">
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>
-                    <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                        <img class="img-fluid" src="assets/img/blog-100x100.jpg" alt="">
-                        <div class="pl-3">
-                            <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                            <small>Jan 01, 2050</small>
-                        </div>
-                    </a>
-                    <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                        <img class="img-fluid" src="assets/img/blog-100x100.jpg" alt="">
-                        <div class="pl-3">
-                            <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                            <small>Jan 01, 2050</small>
-                        </div>
-                    </a>
-                    <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                        <img class="img-fluid" src="assets/img/blog-100x100.jpg" alt="">
-                        <div class="pl-3">
-                            <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                            <small>Jan 01, 2050</small>
-                        </div>
-                    </a>
+                    <?php
+                    foreach ($postRecent as $post) {
+
+                        ?>
+                        <a class="d-flex align-items-center text-decoration-none bg-white mb-3"
+                            href="index.php?controller=posts&action=details&id=<?php echo $post->id ?>">
+                            <img style="width: 100px; height: 100px;" class="img-fluid"
+                                src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                            <div class="pl-3">
+                                <h6 class="m-1"><?php echo $post->title; ?></h6>
+                                <small><?php echo date_format($post->datecreated, 'd F Y'); ?></small>
+                            </div>
+                        </a>
+                        <?php
+                    }
+                    ?>
                 </div>
 
-                <!-- Tag Cloud -->
-                <div class="mb-5">
-                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h4>
-                    <div class="d-flex flex-wrap m-n1">
-                        <a href="" class="btn btn-light m-1">Design</a>
-                        <a href="" class="btn btn-light m-1">Development</a>
-                        <a href="" class="btn btn-light m-1">Marketing</a>
-                        <a href="" class="btn btn-light m-1">SEO</a>
-                        <a href="" class="btn btn-light m-1">Writing</a>
-                        <a href="" class="btn btn-light m-1">Consulting</a>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

@@ -20,7 +20,7 @@ class PagesController extends BaseController
 
     public function home()
     {
-        $posts = Post::all();
+        $posts = Post::getRecent();
         $data = array(
             'titlePage' => 'Home',
             'posts' => $posts

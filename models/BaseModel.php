@@ -10,7 +10,7 @@ class BaseModel extends DB
     }
 
     //Lay he data trong table
-    public function all($table, $select = ['*'], $orderBys = ["id" => "asc"], $limit = 10)
+    public function getAll($table, $select = ['*'], $orderBys = ["id" => "asc"], $limit = 10)
     {
         $select = implode(',', $select);
         $orderByString = implode(' ', $orderBys);

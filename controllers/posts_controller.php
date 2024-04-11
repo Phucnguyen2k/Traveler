@@ -1,6 +1,7 @@
 <?php
 require_once ('controllers/base_controller.php');
 require_once ('models/post.php');
+require_once ('models/category.php');
 
 class PostsController extends BaseController
 {
@@ -12,17 +13,28 @@ class PostsController extends BaseController
     public function home()
     {
         $posts = Post::all();
-        $data = array('posts' => $posts);
+        $postRecent = Post::getRecent();
+        $tags = Category::categoriesTag();
+
+        $data = array(
+            'posts' => $posts,
+            'postRecent' => $postRecent,
+            'tags' => $tags
+        );
         $this->render('home', $data);
     }
     public function details()
     {
         $id = $_GET["id"];
         $post = Post::get($id);
-        $posts = Post::all();
+        $posts = Post::getRecent();
+        $tags = Category::categoriesTag();
+
+
         $data = array(
             'post' => $post,
-            'posts' => $posts
+            'posts' => $posts,
+            'tags' => $tags
         );
         $this->render('details', $data);
     }

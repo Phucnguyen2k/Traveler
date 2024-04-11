@@ -69,4 +69,23 @@ class Post
             $item['createdby']
         );
     }
+    static function getRecent()
+    {
+        $list = [];
+        $db = DB::getInstance();
+        $req = $db->query('SELECT * FROM posts LIMIT 3');
+        foreach ($req->fetchAll() as $item) {
+            $list[] = new Post(
+                $item['id'],
+                $item['title'],
+                $item['picture'],
+                $item['content'],
+                $item['categoryid'],
+                $item['datecreated'],
+                $item['createdby']
+            );
+        }
+
+        return $list;
+    }
 }
