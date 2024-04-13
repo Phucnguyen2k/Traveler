@@ -3,6 +3,7 @@ require_once ('controllers/base_controller.php');
 require_once ('models/post.php');
 require_once ('models/category.php');
 
+
 class PostsController extends BaseController
 {
     function __construct()
@@ -31,13 +32,18 @@ class PostsController extends BaseController
         $post = Post::get($id);
         $posts = Post::getRecent();
         $tags = Category::categoriesTag();
-
+        $member = Member::get($post->createdby);
+       
 
         $data = array(
             'post' => $post,
             'posts' => $posts,
-            'tags' => $tags
+            'tags' => $tags,
+            'member' => $member
         );
         $this->render('details', $data);
     }
+
+
+
 }

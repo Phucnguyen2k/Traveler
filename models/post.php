@@ -16,6 +16,7 @@ class Post
     //object 
     public $category;
     public $member;
+    public $avatar;
 
     public function __construct($id, $title, $picture, $content, $categoryid, $datecreated, $createdby)
     {
@@ -28,6 +29,7 @@ class Post
         $this->createdby = $createdby;
         $this->category = Category::get($categoryid);
         $this->member = Member::get($createdby);
+        $this->avatar = Member::get($createdby);
 
     }
 
@@ -57,8 +59,8 @@ class Post
         $query = 'SELECT * FROM posts WHERE id = :post_id';
         $stmt = $db->prepare($query);
         $stmt->execute(['post_id' => $postId]);
-        $item = $stmt->fetch();
-
+        $item = $stmt->fetch(PDO::FETCH_ASSOC);
+        
         return new Post(
             $item['id'],
             $item['title'],
@@ -66,7 +68,7 @@ class Post
             $item['content'],
             $item['categoryid'],
             $item['datecreated'],
-            $item['createdby']
+            $item['createdby'],
         );
     }
     static function getRecent()
@@ -74,7 +76,7 @@ class Post
         $list = [];
         $db = DB::getInstance();
         $req = $db->query('SELECT * FROM posts ORDER by id desc  LIMIT 3');
-        foreach ($req->fetchAll() as $item) {
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
             $list[] = new Post(
                 $item['id'],
                 $item['title'],
@@ -86,6 +88,30 @@ class Post
             );
         }
 
+        return $list;
+    }
+
+    static function filterCategory() {
+        if(isset($_GET["filter"])) {
+            $filterCategory = filterCategory();
+        }
+        $list = [];  
+        
+        $db = DB::getInstance();
+        $query = 'SELECT * FROM posts WHERE categoryid = :category_id';
+        $stmt = $db->prepare($query);
+        $stmt->execute(['category_id' => $filterCategory]);
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $item) {
+            $list[] = new Post(
+                $item['id'],
+                $item['title'],
+                $item['picture'],
+                $item['content'],
+                $item['categoryid'],
+                $item['datecreated'],
+                $item['createdby']
+            );
+        }
         return $list;
     }
 }

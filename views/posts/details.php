@@ -4,10 +4,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <!-- Blog Detail Start -->
-                <div class="pb-3">
+                <div class="shadow-sm">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                            <img class="img-fluid w-100 rounded-top" src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">01</h6>
                                 <small class="text-white text-uppercase">Jan</small>
@@ -15,21 +15,22 @@
                         </div>
                     </div>
                     <div class="bg-white mb-3" style="padding: 30px;">
-                        <div class="d-flex mb-3">
-                            <a class="text-primary text-uppercase text-decoration-none" href="">
-                                <?php echo $post->member->title; ?>
+                        
+                        <h2 class="mb-3">
+                            <?php echo $post->title; ?>
+                        </h2>
+                        <p style="min-height: 288px;">
+                            <?php echo $post->content; ?>
+                        </p>
+                        <div class="d-flex">
+                            <!-- <a class="text-primary text-uppercase text-decoration-none" href="">
+                                <?php echo $post->member->name; ?>
                             </a>
-                            <span class="text-primary px-2">|</span>
+                            <span class="text-primary px-2">|</span> -->
                             <a class="text-primary text-uppercase text-decoration-none" href="">
                                 <?php echo $post->category->title; ?>
                             </a>
                         </div>
-                        <h2 class="mb-3">
-                            <?php echo $post->title; ?>
-                        </h2>
-                        <p>
-                            <?php echo $post->content; ?>
-                        </p>
                     </div>
                 </div>
                 <!-- Blog Detail End -->
@@ -106,8 +107,8 @@
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <!-- Author Bio -->
                 <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4">
-                    <img src="img/user.jpg" class="img-fluid mx-auto mb-3" style="width: 100px;">
-                    <h3 class="text-primary mb-3"><?php echo $post->member->title; ?></h3>
+                    <img src="assets/img/avatar/<?php echo $member->avatar; ?>" class="img-fluid mx-auto mb-3 rounded" style="width: 200px;">
+                    <h3 class="text-primary mb-3"><?php echo $member->name; ?></h3>
                     <p>Conset elitr erat vero dolor ipsum et diam, eos dolor lorem, ipsum sit no ut est ipsum erat kasd
                         amet elitr</p>
                     <div class="d-flex justify-content-center">
@@ -163,31 +164,39 @@
                         </ul>
                     </div>
                 </div>
-
                 <!-- Recent Post -->
-                <div class="mb-5">
-                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>
-                    <?php
-                    foreach ($posts as $post) {
 
-                        ?>
-                        <a class="d-flex align-items-center text-decoration-none bg-white mb-3"
-                            href="index.php?controller=posts&action=details&id=<?php echo $post->id ?>">
-                            <img style="width: 100px; height: 100px;" class="img-fluid"
-                                src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1"><?php echo $post->title; ?></h6>
-                                <small><?php echo date_format($post->datecreated, 'd F Y'); ?></small>
-                            </div>
-                        </a>
-                        <?php
-                    }
-                    ?>
-                </div>
+               
 
 
             </div>
         </div>
+     <!-- Recent Post -->
+     <div class="mb-5">
+    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>
+    <div class="row">
+        <?php foreach ($posts as $post) { ?>
+            <div class="col-lg-4 col-md-6 mb-3">
+                <a class="d-flex align-items-center text-decoration-none bg-white rounded"
+                    href="index.php?controller=posts&action=details&id=<?php echo $post->id ?>">
+                    <img style="width: 150px; height: 150px;" class="img-fluid"
+                        src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                    <div class="pl-3">
+                        <h6 class=""><?php echo $post->title; ?></h6>
+                        <small><?php echo date_format($post->datecreated, 'd F Y'); ?></small>
+                    </div>
+                </a>
+            </div>
+        <?php } ?>
     </div>
 </div>
-<!-- Blog End -->
+     <!-- Recent Post End -->
+
+</div>
+
+</div>
+
+</div>
+
+    
+</div>
