@@ -13,7 +13,7 @@
                 <div class="col-lg-4 col-md-6 mb-4 pb-2">
                     <div class="blog-item">
                         <div class="position-relative">
-                            <img class="img-fluid w-100" src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                            <img class="img-fluid w-100" style="height: 200px !important; width: 350px !important;" src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
                             <div class="blog-date">
                                 <h6 class="font-weight-bold mb-n1">
                                     <?php echo date_format($post->datecreated, 'd'); ?>

@@ -31,7 +31,7 @@
 
 <body>
     <!-- Topbar Start -->
-    <div class="container-fluid bg-light pt-3 d-none d-lg-block">
+    <!-- <div class="container-fluid bg-light pt-3 d-none d-lg-block">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
@@ -62,14 +62,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Topbar End -->
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
+    <div class="container-fluid position-relative nav-bar p-3">
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5 rounded">
                 <a href="<?php echo _WEB_HOST ?>" class="navbar-brand">
                     <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1>
                 </a>
@@ -85,7 +85,8 @@
                             class="nav-item nav-link">Services</a>
                         <a href="<?php echo _WEB_HOST ?>?controller=pages&action=package" class="nav-item nav-link">Tour
                             Packages</a>
-                        <div class="nav-item dropdown">
+                            <a href="<?php echo _WEB_HOST ?>?controller=posts&action=home#" class="nav-item nav-link">Blogs</a>
+                        <!-- <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu border-0 rounded-0 m-0">
                                 <a href="<?php echo _WEB_HOST ?>?controller=posts&action=home#"
@@ -95,7 +96,7 @@
                                 <a href="guide.html" class="dropdown-item">Travel Guides</a>
                                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                             </div>
-                        </div>
+                        </div> -->
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                 </div>
@@ -165,19 +166,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
-        style="border-color: rgba(256, 256, 256, .1) !important;">
-        <div class="row">
-            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white-50">Copyright &copy; <a href="#">Domain</a>. All Rights Reserved.</a>
-                </p>
-            </div>
-            <div class="col-lg-6 text-center text-md-right">
-                <p class="m-0 text-white-50">Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                </p>
-            </div>
-        </div>
-    </div>
+
     <!-- Footer End -->
 
 

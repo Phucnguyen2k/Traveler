@@ -15,11 +15,13 @@ class PostsController extends BaseController
         $posts = Post::all();
         $postRecent = Post::getRecent();
         $tags = Category::categoriesTag();
+        $filter = Category::filter();
 
-        $data = array(
+            $data = array(
             'posts' => $posts,
             'postRecent' => $postRecent,
-            'tags' => $tags
+            'tags' => $tags,
+            'filter' => $filter
         );
         $this->render('home', $data);
     }

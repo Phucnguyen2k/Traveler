@@ -16,17 +16,22 @@
 <!-- Booking Start -->
 <div class="container-fluid booking mt-5">
     <div class="container pb-5">
-        <div class="bg-light shadow" style="padding: 30px;">
+        <div class="bg-light shadow rounded" style="padding: 30px;">
             <div class="row align-items-center" style="min-height: 60px;">
                 <div class="col-md-10">
                     <div class="row">
                         <div class="col-md-3">
                             <div class="mb-3 mb-md-0">
                                 <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected>Destination</option>
-                                    <option value="1">Destination 1</option>
-                                    <option value="2">Destination 1</option>
-                                    <option value="3">Destination 1</option>
+                                    <option selected>Category</option>
+                                    <?php 
+                                    foreach ($filter as $cate) {
+                                       
+                                        ?>
+                                        <option value="<?php echo $cate['id']; ?>"><?php echo $cate['title']; ?></option>
+                                        <?php
+                                    }
+                                     ?>
                                 </select>
                             </div>
                         </div>
@@ -82,7 +87,7 @@
                         <div class="col-md-6 mb-4 pb-2">
                             <div class="blog-item">
                                 <div class="position-relative">
-                                    <img class="img-fluid w-100" src="assets/img/posts/<?php echo $post->picture; ?>"
+                                    <img class="img-fluid w-100 rounded-top" style="height: 200px !important; width: 350px !important;" src="assets/img/posts/<?php echo $post->picture; ?>"
                                         alt="">
                                     <div class="blog-date">
                                         <h6 class="font-weight-bold mb-n1">

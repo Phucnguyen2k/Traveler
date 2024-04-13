@@ -73,7 +73,7 @@ class Post
     {
         $list = [];
         $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM posts LIMIT 3');
+        $req = $db->query('SELECT * FROM posts ORDER by id desc  LIMIT 3');
         foreach ($req->fetchAll() as $item) {
             $list[] = new Post(
                 $item['id'],

@@ -38,7 +38,7 @@
 <!-- Carousel End -->
 
 <?php
-layoutParts('booking');
+// layoutParts('booking');
 layoutParts('about');
 layoutParts('feature');
 require_once ("views\layouts\layoutPart\blog.php");

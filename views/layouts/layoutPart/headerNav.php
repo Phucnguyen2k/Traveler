@@ -1,7 +1,7 @@
 <!-- Header start -->
 <div class="container-fluid page-header">
     <div class="container">
-        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 600px">
             <h3 class="display-4 text-white text-uppercase">
                 <?php echo !empty($data['header']) ? $data['header'] : 'Traveler'; ?>
 
@@ -20,7 +20,7 @@
 <!-- Header End -->
 
 <!-- Booking Start -->
-<div class="container-fluid booking mt-5 pb-5">
+<!-- <div class="container-fluid booking mt-5 pb-5">
     <div class="container pb-5">
         <div class="bg-light shadow rounded-lg" style="padding: 30px;">
             <div class="row align-items-center" style="min-height: 60px;">
@@ -29,10 +29,7 @@
                         <div class="col-md-3">
                             <div class="mb-3 mb-md-0">
                                 <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected="">Destination</option>
-                                    <option value="1">Destination 1</option>
-                                    <option value="2">Destination 1</option>
-                                    <option value="3">Destination 1</option>
+                                
                                 </select>
                             </div>
                         </div>
@@ -71,5 +68,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Booking End -->

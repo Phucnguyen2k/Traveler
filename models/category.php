@@ -44,15 +44,40 @@ class Category
 
         return $list;
 
+    }
+    static function filter() {
+        $listCate = [];
+        $db = DB::getInstance();
 
+        $req = $db->query('SELECT * FROM categories');
+        $listCate = $req->fetchAll();
+        
+        return $listCate;
     }
 
     static function get($id)
     {
+        // $db = DB::getInstance();
+        // $req = $db->query('SELECT * FROM categories WHERE id = ' . $id);
+        // $item = $req->fetch();
+        // return new Category($item['id'], $item['title']);
         $db = DB::getInstance();
         $req = $db->query('SELECT * FROM categories WHERE id = ' . $id);
-        $item = $req->fetch();
-        return new Category($item['id'], $item['title']);
+        
+        // Kiểm tra xem truy vấn có trả về kết quả không
+        if ($req) {
+            $item = $req->fetch();
+            // Kiểm tra xem có dữ liệu trả về không
+            if ($item) {
+                return new Category($item['id'], $item['title']);
+            } else {
+                // Trả về giá trị mặc định hoặc xử lý lỗi khác
+                return null; // hoặc trả về một giá trị mặc định khác
+            }
+        } else {
+            // Xử lý lỗi nếu có
+            return null; // hoặc trả về một giá trị mặc định khác
+        }
     }
 
 }
