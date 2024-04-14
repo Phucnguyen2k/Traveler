@@ -6,19 +6,19 @@
                 <!-- Blog Detail Start -->
                 <div class="shadow-sm">
                     <div class="blog-item">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100 rounded-top" src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
-                            <div class="blog-date">
-                                <h6 class="font-weight-bold mb-n1">01</h6>
-                                <small class="text-white text-uppercase">Jan</small>
-                            </div>
-                        </div>
+                    <div class="position-relative">
+                    <img class="img-fluid w-100 rounded-top" src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                    <div class="overlay"></div>
+                    </div>
+
                     </div>
                     <div class="bg-white mb-3" style="padding: 30px;">
                         
-                        <h2 class="mb-3">
+                        <h2 class="">
                             <?php echo $post->title; ?>
                         </h2>
+                        <small class="mb-3 d-block"><?php echo date_format($post->datecreated, 'd F Y'); ?></small>
+
                         <p style="min-height: 288px;">
                             <?php echo $post->content; ?>
                         </p>
@@ -27,81 +27,13 @@
                                 <?php echo $post->member->name; ?>
                             </a>
                             <span class="text-primary px-2">|</span> -->
-                            <a class="text-primary text-uppercase text-decoration-none" href="">
-                                <?php echo $post->category->title; ?>
-                            </a>
+                            <a href="" class="btn btn-light m-1 shadow-sm"><?php echo $post->category->title; ?></a>
                         </div>
                     </div>
                 </div>
                 <!-- Blog Detail End -->
 
-                <!-- Comment List Start -->
-                <!-- <div class="bg-white" style="padding: 30px; margin-bottom: 30px;">
-                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">3 Comments</h4>
-                    <div class="media mb-4">
-                        <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                        <div class="media-body">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.
-                                Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor
-                                consetetur at sit.</p>
-                            <button class="btn btn-sm btn-outline-primary">Reply</button>
-                        </div>
-                    </div>
-                    <div class="media">
-                        <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                        <div class="media-body">
-                            <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                            <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor labore
-                                accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed eirmod ipsum.
-                                Gubergren clita aliquyam consetetur sadipscing, at tempor amet ipsum diam tempor
-                                consetetur at sit.</p>
-                            <button class="btn btn-sm btn-outline-primary">Reply</button>
-                            <div class="media mt-4">
-                                <img src="img/user.jpg" alt="Image" class="img-fluid mr-3 mt-1" style="width: 45px;">
-                                <div class="media-body">
-                                    <h6><a href="">John Doe</a> <small><i>01 Jan 2045</i></small></h6>
-                                    <p>Diam amet duo labore stet elitr invidunt ea clita ipsum voluptua, tempor
-                                        labore accusam ipsum et no at. Kasd diam tempor rebum magna dolores sed sed
-                                        eirmod ipsum. Gubergren clita aliquyam consetetur sadipscing, at tempor amet
-                                        ipsum diam tempor consetetur at sit.</p>
-                                    <button class="btn btn-sm btn-outline-primary">Reply</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- Comment List End -->
-
-                <!-- Comment Form Start -->
-                <!-- <div class="bg-white mb-3" style="padding: 30px;">
-                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Leave a comment</h4>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" class="form-control" id="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="website">Website</label>
-                            <input type="url" class="form-control" id="website">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group mb-0">
-                            <input type="submit" value="Leave a comment"
-                                class="btn btn-primary font-weight-semi-bold py-2 px-3">
-                        </div>
-                    </form>
-                </div>
-                <!-- Comment Form End -->
+             
             </div>
 
             <div class="col-lg-4 mt-5 mt-lg-0">

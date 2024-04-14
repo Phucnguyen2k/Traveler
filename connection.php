@@ -18,7 +18,7 @@ class DB
     const HOST = 'localhost';
     const USERNAME = 'root';
     const PASSWORD = '';
-    const DATABASE = 'phpclass';
+    const DATABASE = 'travelerdb';
     private $connect;
     public function connect()
     {

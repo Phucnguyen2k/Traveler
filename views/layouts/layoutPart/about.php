@@ -22,7 +22,6 @@
                             <img class="img-fluid rounded-lg" src="assets/img/about-2.jpg" alt="">
                         </div>
                     </div>
-                    <a href="" class="btn btn-primary mt-1">Book Now</a>
                 </div>
             </div>
         </div>

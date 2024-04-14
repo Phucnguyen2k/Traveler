@@ -104,7 +104,6 @@
                                 <div class="bg-white p-4">
                                     <div class="d-flex mb-2">
                                         <a class="text-primary text-uppercase text-decoration-none" href="">
-                                            <!-- TODO: member -> title -->
                                             <?php echo $post->member->name; ?>
                                         </a>
                                         <span class="text-primary px-2">|</span>
