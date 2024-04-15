@@ -1,16 +1,17 @@
 <!-- Header Start -->
 <div class="container-fluid page-header">
     <div class="container">
-        <div class="d-flex flex-column align-items-center justify-content-center mb-5" style="min-height: 600px">
-            <h3 class="display-4 text-white text-uppercase">Blog</h3>
+            <div class="d-flex flex-column align-items-center justify-content-center mb-5" style="min-height: 600px">
+                <h3 class="display-4 text-white text-uppercase"> <?php echo !empty($category->title) ? $category->title : 'BLOG'; ?></h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="index.php">Home</a></p>
+                <p class="m-0 text-uppercase"><a class="text-white" href="?controller=posts&action=home"><?php echo!empty($category->title) ? "BLOG" : 'HOME'; ?></a></p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
-                <p class="m-0 text-uppercase">Blog</p>
+                <p class="m-0 text-uppercase"> <?php echo !empty($category->title) ? $category->title : 'BLOG'; ?></p>
             </div>
         </div>
     </div>
 </div>
+
 <!-- Header End -->
 
 <!-- Booking Start -->
@@ -107,7 +108,7 @@
                                             <?php echo $post->member->name; ?>
                                         </a>
                                         <span class="text-primary px-2">|</span>
-                                        <a class="text-primary text-uppercase text-decoration-none" href="">
+                                        <a class="text-primary text-uppercase text-decoration-none" href="?controller=posts&action=postByCategory&id=<?php echo $post->categoryid ?>">
                                             <?php echo $post->category->title; ?>
                                         </a>
                                     </div>
@@ -193,12 +194,12 @@
                         <ul class="list-inline m-0">
 
                             <?php foreach ($tags as $tag):
-
+                          
                                 ?>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>
-                                        <?php echo $tag->id; ?></a>
-                                    <span class="badge badge-primary badge-pill"><?php echo $tag->title; ?></span>
+                                    <a class="text-dark" href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>"><i class="fa fa-angle-right text-primary mr-2"></i>
+                                        <?php echo $tag->title; ?></a>
+                                    <span class="badge badge-primary badge-pill"><?php echo $tag->amount; ?></span>
                                 </li>
                             <?php endforeach; ?>
 

@@ -114,4 +114,24 @@ class Post
         }
         return $list;
     }
+
+    static function allPostByCate($Categoryid)
+    {
+        $list = [];
+        $db = DB::getInstance();
+        $req = $db->query('SELECT * FROM posts WHERE categoryid = '.$Categoryid);
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
+            $list[] = new Post(
+                $item['id'],
+                $item['title'],
+                $item['picture'],
+                $item['content'],
+                $item['categoryid'],
+                $item['datecreated'],
+                $item['createdby']
+            );
+        }
+
+        return $list;
+    }
 }

@@ -26,6 +26,22 @@ class PostsController extends BaseController
         );
         $this->render('home', $data);
     }
+    public function postByCategory()
+    {
+        $id = $_GET["id"];
+        $posts = Post::allPostByCate($id);
+        $postRecent = Post::getRecent();
+        $tags = Category::categoriesTag();
+        $category = Category::get($id);
+
+            $data = array(
+            'posts' => $posts,
+            'postRecent' => $postRecent,
+            'tags' => $tags,
+            'category' => $category
+        );
+        $this->render('home', $data);
+    }
     public function details()
     {
         $id = $_GET["id"];
@@ -44,6 +60,7 @@ class PostsController extends BaseController
         $this->render('details', $data);
     }
 
+   
 
 
 }

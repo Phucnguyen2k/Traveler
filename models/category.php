@@ -5,11 +5,13 @@ class Category
 {
     public $id;
     public $title;
+    public $amount;
 
-    function __construct($id, $title)
+    function __construct($id, $title, $amount)
     {
         $this->id = $id;
         $this->title = $title;
+        $this->amount = $amount;
     }
 
     static function all()
@@ -18,8 +20,9 @@ class Category
         $db = DB::getInstance();
         $req = $db->query('SELECT * FROM categories');
 
-        foreach ($req->fetchAll() as $item) {
-            $list[] = new Category($item['id'], $item['title']);
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
+            $amount = isset($item['amount']) ? $item['amount'] : null;
+            $list[] = new Category($item['id'], $item['title'],$amount);
         }
 
         return $list;
@@ -31,13 +34,15 @@ class Category
         $list = [];
         $db = DB::getInstance();
 
-        $req = $db->query('SELECT categories.title, COUNT(*) as "Amount" FROM categories INNER JOIN posts ON categories.id = posts.categoryid GROUP BY title');
+        $req = $db->query('SELECT categories.id, categories.title, COUNT(*) as amount FROM categories INNER JOIN posts ON categories.id = posts.categoryid GROUP BY categories.id, categories.title');
 
+  
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
 
-        foreach ($req->fetchAll() as $item) {
             $list[] = new Category(
+                $item['id'],
                 $item['title'],
-                $item['Amount']
+                $item['amount']
             );
         }
 
@@ -68,7 +73,8 @@ class Category
             $item = $req->fetch();
             // Kiểm tra xem có dữ liệu trả về không
             if ($item) {
-                return new Category($item['id'], $item['title']);
+                $amount = isset($item['amount']) ? $item['amount'] : null;
+                return new Category($item['id'], $item['title'], $amount);
             } else {
                 // Trả về giá trị mặc định hoặc xử lý lỗi khác
                 return null; // hoặc trả về một giá trị mặc định khác

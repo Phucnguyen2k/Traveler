@@ -32,7 +32,7 @@
 
                                 </a>
                                 <span class="text-primary px-2">|</span>
-                                <a class="text-primary text-uppercase text-decoration-none" href="">
+                                <a class="text-primary text-uppercase text-decoration-none" href="?controller=posts&action=postByCategory&id=<?php echo $post->categoryid ?>">
                                     <?php echo $post->category->title; ?>
 
                                 </a>

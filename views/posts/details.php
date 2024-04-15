@@ -27,7 +27,7 @@
                                 <?php echo $post->member->name; ?>
                             </a>
                             <span class="text-primary px-2">|</span> -->
-                            <a href="" class="btn btn-light m-1 shadow-sm"><?php echo $post->category->title; ?></a>
+                            <a href="?controller=posts&action=postByCategory&id=<?php echo $post->categoryid ?>" class="btn btn-light m-1 shadow-sm"><?php echo $post->category->title; ?></a>
                         </div>
                     </div>
                 </div>
@@ -81,15 +81,15 @@
                     <div class="bg-white" style="padding: 30px;">
                         <ul class="list-inline m-0">
 
-                            <?php foreach ($tags as $tag):
-
-                                ?>
-                                <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="#"><i class="fa fa-angle-right text-primary mr-2"></i>
-                                        <?php echo $tag->id; ?></a>
-                                    <span class="badge badge-primary badge-pill"><?php echo $tag->title; ?></span>
-                                </li>
-                            <?php endforeach; ?>
+                        <?php foreach ($tags as $tag):
+                          
+                          ?>
+                          <li class="mb-3 d-flex justify-content-between align-items-center">
+                              <a class="text-dark" href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>"><i class="fa fa-angle-right text-primary mr-2"></i>
+                                  <?php echo $tag->title; ?></a>
+                              <span class="badge badge-primary badge-pill"><?php echo $tag->amount; ?></span>
+                          </li>
+                      <?php endforeach; ?>
 
 
 
