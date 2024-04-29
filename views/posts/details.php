@@ -39,7 +39,7 @@
             <div class="col-lg-4 mt-5 mt-lg-0 ">
                 <!-- Author Bio -->
                 <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4 rounded">
-                    <img src="assets/img/avatar/<?php echo $member->avatar; ?>" class="img-fluid mx-auto mb-3 rounded" style="width: 200px;">
+                    <img src="assets/img/avatar/<?php echo !empty($member->avatar) ? $member->avatar : 'non-avatar.jpg'; ?>" class="img-fluid mx-auto mb-3 rounded" style="width: 200px;">
                     <h3 class="text-primary mb-3"><?php echo $member->name; ?></h3>
                     <p>Conset elitr erat vero dolor ipsum et diam, eos dolor lorem, ipsum sit no ut est ipsum erat kasd
                         amet elitr</p>
@@ -112,7 +112,7 @@
                 <a class="d-flex align-items-center text-decoration-none bg-white rounded"
                     href="index.php?controller=posts&action=details&id=<?php echo $post->id ?>">
                     <img style="width: 150px; height: 150px;" class="img-fluid"
-                        src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                        src="assets/img/posts/<?php echo !empty($post->picture) ? $post->picture : 'non-post.jpg'; ?>" alt="">
                     <div class="pl-3">
                         <h6 class=""><?php echo $post->title; ?></h6>
                         <small><?php echo date_format($post->datecreated, 'd F Y'); ?></small>

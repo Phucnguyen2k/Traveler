@@ -1,7 +1,7 @@
 <div class="container">
     <h2 class="text-center text-uppercase my-5">Admin</h2>
  
-    <ul class="nav nav-pills p-2 mb-4 bg-light">
+    <ul class="nav nav-pills p-2 mb-4 bg-light rounded">
     <li class="nav-item ">
         <a class="nav-link rounded active" href="?controller=admin&action=home">Blogs</a>
     </li>
@@ -44,15 +44,17 @@
                             <?php echo $count ?>
                         </th>
                         <th>
-                        <img style="width: 150px; height: 100px;" class="img-fluid rounded"
+                            <a href="?controller=admin&action=editPost&id=<?php echo $post->id ?>">
+                                <img style="width: 150px; height: 100px;" class="img-fluid rounded"
                         src="assets/img/posts/<?php echo $post->picture; ?>" alt="">
+                            </a>
                         </th>
                       
                         <th>
                             <?php echo $post->title; ?>
                         </th>
                         <th>
-                            <?php echo date_format($post->datecreated, 'd F Y'); ?>
+                            <?php echo date_format($post->datecreated, 'd/m/Y'); ?>
                         </th>
                         <th>
                             <?php echo $post->member->name ?>
@@ -62,7 +64,7 @@
                         </th>
                      
                         <th>
-                            <a href="index.php?controller=admin&action=edit&id=<?php echo $post->id ?>" class="btn btn-warning btn-sm rounded"><i
+                            <a href="?controller=admin&action=editPost&id=<?php echo $post->id ?>" class="btn btn-warning btn-sm rounded"><i
                                     class="fa-solid fa-pen-to-square"></i> </a>
                         </th>
                         <th>

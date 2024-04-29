@@ -21,7 +21,7 @@ class AdminController extends BaseController
     }
     public function category()
     {
-        $categories = category::all();
+        $categories = category::categoriesTag();
      
         $data = array(
             'categories' => $categories
@@ -53,6 +53,25 @@ class AdminController extends BaseController
         );
         $this->render('addPosts', $data, false, true);
     }
+
+    //TODO: Edit Post
+    public function editPost()
+    {
+        $id = $_GET["id"];
+        $post = Post::get($id);
+        $member = Member::get($post->createdby);
+        $members = Member::all();
+        $categories = category::all();
+     
+        
+        $data = array(
+            'post' => $post,
+            'member' => $member,
+            'members' => $members,
+            'categories' => $categories
+        );
+        $this->render('editPost', $data, false, true);
+    }
    
     public function edit() 
     {
@@ -67,6 +86,4 @@ class AdminController extends BaseController
         // );
         $this->render('edit',$data = [],false,true);
     }
-
-   
 }

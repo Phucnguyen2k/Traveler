@@ -790,7 +790,7 @@ var DateTimePicker = function ($, moment) {
             var returnMoment = void 0;
 
             if (d === undefined || d === null) {
-                returnMoment = moment(); //TODO should this use format? and locale?
+                returnMoment = moment(); 
             } else if (this._hasTimeZone()) {
                 // There is a string to parse and a default time zone
                 // parse with the tz function which takes a default time zone if it is not in the format string

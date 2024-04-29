@@ -76,8 +76,4 @@ class PostsController extends BaseController
         );
         $this->render('details', $data);
     }
-
-   
-
-
 }

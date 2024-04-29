@@ -1,7 +1,7 @@
 <div class="container">
     <h2 class="text-center text-uppercase my-5">Admin</h2>
 
-    <ul class="nav nav-pills p-2 mb-4 bg-light">
+    <ul class="nav nav-pills p-2 mb-4 bg-light rounded">
     <li class="nav-item ">
         <a class="nav-link  rounded " href="?controller=admin&action=home">Blogs</a>
     </li>
@@ -39,19 +39,22 @@
                             <?php echo $count ?>
                         </th>
                         <th>
-                        <img src="assets/img/avatar/<?php echo $member->avatar; ?>" class="img-fluid mx-auto mb-3 rounded" style="width: 100px;">
+                            <img src="assets/img/avatar/<?php echo !empty($member->avatar) ? $member->avatar : 'non-avatar.jpg'; ?>"
+                                 class="img-fluid mx-auto mb-3 rounded"
+                                 style="width: 100px;"
+                                 alt="<?php echo $member->name; ?>">
                         </th>
                         <th>
                             <?php echo $member->name; ?>
                         </th>
                      
                         <th>
-                            <a href="index.php?controller=admin&action=edit&id=<?php echo $member->id  ?>" class="btn btn-warning btn-sm"><i
+                            <a href="index.php?controller=admin&action=edit&id=<?php echo $member->id  ?>" class="btn btn-warning btn-sm rounded"><i
                                     class="fa-solid fa-pen-to-square"></i> </a>
                         </th>
                         <th>
                             <a href="?module=admin&action=deleteMember&id=<?php echo $member->id  ?>"
-                                onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm"><i
+                                onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm rounded"><i
                                     class="fa-solid fa-trash"></i> </a>
                         </th>
                     </tr>
