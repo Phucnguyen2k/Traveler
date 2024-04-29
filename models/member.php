@@ -1,5 +1,5 @@
 <?php
-class Member
+class Member 
 {
     public $id;
     public $name;
@@ -32,4 +32,7 @@ class Member
 
         return new Member($item['id'], $item['name'], $item['avatar']);
     }
+
+    //TODO: CUID Member
+   
 }

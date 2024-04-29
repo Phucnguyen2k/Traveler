@@ -2,6 +2,7 @@
 require_once ('controllers/base_controller.php');
 require_once ('models/post.php');
 require_once ('models/category.php');
+require_once ('models/member.php');
 
 
 class AdminController extends BaseController
@@ -18,6 +19,40 @@ class AdminController extends BaseController
         );
         $this->render('home',$data, false, true);
     }
+    public function category()
+    {
+        $categories = category::all();
+     
+        $data = array(
+            'categories' => $categories
+        );
+        $this->render('category',$data, false, true);
+    }
+
+    public function member()
+    {
+
+        $members = Member::all();
+     
+        $data = array(
+            'members' => $members
+        );
+        $this->render('member',$data, false, true);
+    }
+    
+    public function addPost()
+    {
+        $posts = Post::all();
+        $members = Member::all();
+        $categories = category::all();
+     
+        $data = array(
+            'posts' => $posts,
+            'members' => $members,
+            'categories' => $categories
+        );
+        $this->render('addPosts', $data, false, true);
+    }
    
     public function edit() 
     {
@@ -32,4 +67,6 @@ class AdminController extends BaseController
         // );
         $this->render('edit',$data = [],false,true);
     }
+
+   
 }

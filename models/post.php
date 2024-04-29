@@ -30,7 +30,6 @@ class Post
         $this->category = Category::get($categoryid);
         $this->member = Member::get($createdby);
         $this->avatar = Member::get($createdby);
-
     }
 
     static function all()
@@ -134,4 +133,24 @@ class Post
 
         return $list;
     }
+
+    static function allPostByMember($MemberId)
+    {
+        $list = [];
+        $db = DB::getInstance();
+        $req = $db->query('SELECT * FROM posts WHERE createdby = '.$MemberId);
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
+            $list[] = new Post(
+                $item['id'],
+                $item['title'],
+                $item['picture'],
+                $item['content'],
+                $item['categoryid'],
+                $item['datecreated'],
+                $item['createdby']
+            );
+        }
+
+        return $list;
+    } 
 }

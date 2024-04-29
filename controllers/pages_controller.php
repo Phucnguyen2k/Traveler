@@ -47,7 +47,7 @@ class PagesController extends BaseController
     public function package()
     {
         $data = array(
-            'titlePage' => 'package',
+            'titlePage' => 'Package',
             'header' => 'PACKAGE'
         );
         $this->render('package', $data, true);

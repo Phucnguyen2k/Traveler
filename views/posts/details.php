@@ -36,9 +36,9 @@
              
             </div>
 
-            <div class="col-lg-4 mt-5 mt-lg-0">
+            <div class="col-lg-4 mt-5 mt-lg-0 ">
                 <!-- Author Bio -->
-                <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4">
+                <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4 rounded">
                     <img src="assets/img/avatar/<?php echo $member->avatar; ?>" class="img-fluid mx-auto mb-3 rounded" style="width: 200px;">
                     <h3 class="text-primary mb-3"><?php echo $member->name; ?></h3>
                     <p>Conset elitr erat vero dolor ipsum et diam, eos dolor lorem, ipsum sit no ut est ipsum erat kasd
@@ -63,7 +63,7 @@
                 </div>
 
                 <!-- Search Form -->
-                <div class="mb-5">
+                <!-- <div class="mb-5">
                     <div class="bg-white" style="padding: 30px;">
                         <div class="input-group">
                             <input type="text" class="form-control p-4" placeholder="Keyword">
@@ -73,12 +73,12 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Category List -->
-                <div class="mb-5">
+                <div class="mb-5 ">
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h4>
-                    <div class="bg-white" style="padding: 30px;">
+                    <div class="bg-white rounded" style="padding: 30px;">
                         <ul class="list-inline m-0">
 
                         <?php foreach ($tags as $tag):

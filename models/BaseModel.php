@@ -73,11 +73,14 @@ class BaseModel extends DB
     public function delete($table, $id)
     {
         $sql = "DELETE FROM $table WHERE id = $id";
+        echo $sql;
+
         return $this->_query($sql);
     }
 
     private function _query($sql)
     {
+        echo "co cau truy van ";
         return mysqli_query($this->connect, $sql);
     }
 }
