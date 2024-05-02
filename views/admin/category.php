@@ -12,7 +12,6 @@
         <a class="nav-link rounded" href="?controller=admin&action=member">Member</a>
     </li>
     </ul>
-    <!-- TODO: Rename Category -->
     <form action="?controller=admin&action=addCategory" method="POST" enctype="multipart/form-data">
         <div class="d-flex flex-row-reverse">
            <p>Add New Category</p>

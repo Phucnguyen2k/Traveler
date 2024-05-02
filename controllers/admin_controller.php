@@ -83,17 +83,4 @@ class AdminController extends BaseController
         );
         $this->render('addCate',$data, false, true);
     }
-    // public function edit() 
-    // {
-    //     $id = $_GET["id"];
-    //     echo $id;
-    //     $post = Post::get($id);
-    //     echo '<pre>';
-    //     print_r($post);
-    //     echo '</pre>';
-    //     // $data = array(
-    //     //     'posts' => $posts
-    //     // );
-    //     $this->render('edit',$data = [],false,true);
-    // }
 }

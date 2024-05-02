@@ -172,6 +172,23 @@ class Post
             'createdby' => $post->member->id,
         ]);
     }
+    static function update($post)
+    {
+        $db = DB::getInstance();
+        $query = 'UPDATE posts 
+                 SET title = :title, picture = :picture, content = :content, categoryid = :categoryid, datecreated = :datecreated, createdby = :createdby 
+                 WHERE id = :post_id';
+        $stmt = $db->prepare($query);
+        $stmt->execute([
+            'title' => $post->title,
+            'picture' => $post->picture,
+            'content' => $post->content,
+            'categoryid' => $post->category->id,
+            'datecreated' => date('Y-m-d'),
+            'createdby' => $post->member->id,
+            'post_id' => $post->id
+        ]);
+    }
 
     //Complete
     static function delete($id)

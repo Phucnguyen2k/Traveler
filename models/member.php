@@ -34,5 +34,24 @@ class Member
     }
 
     //TODO: CUID Member
-     
+    static function add($member)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare('INSERT INTO members (name, avatar) VALUES (:name, :avatar)');
+        $req->execute([
+            'name' => $member->name,
+            'avatar' => $member->avatar
+        ]);
+    }
+
+    static function edit($member)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare('UPDATE members SET name = :name, avatar = :avatar WHERE id = :id');
+        $req->execute([
+            'id' => $member->id,
+            'name' => $member->name,
+            'avatar' => $member->avatar
+        ]);
+    }
 }

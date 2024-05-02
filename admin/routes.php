@@ -3,6 +3,7 @@ $controllers = array(
   'pages' => ['home', 'error'],
   'posts' => ['home', 'add','saveAdd', 'saveNew', 'delete', 'edit', 'saveUpdate'],
   'categories' => ['home','add','save','edit','delete'],
+  'members' => ['home','add','save','saveAdd','saveUpdate','edit','delete','member'],
 ); 
 
 if (!array_key_exists($controller, $controllers) || !in_array($action, $controllers[$controller])) {

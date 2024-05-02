@@ -28,7 +28,7 @@ class PostsController extends BaseController
       $this->render('add', $data);
     }
 
-    //FIXME: save posts
+    //complete
     public function saveAdd()
     {
         //Thu nhap du lieu tu nguoi dung
@@ -44,7 +44,7 @@ class PostsController extends BaseController
               $_POST["content"], 
               $_POST["categoryid"], 
               date('Y-m-d'), 
-              1
+              1 //FIXME: Member ID
           );
  
       //  //Lưu và database
@@ -59,10 +59,6 @@ class PostsController extends BaseController
         $this->render('edit', $data);
       }
       
-      //FIXME: save posts
-      public function save(){
-
-      }
       public function saveNew(){
         //Thu nhap du lieu tu nguoi dung
         //luu hinh anh
@@ -87,25 +83,22 @@ class PostsController extends BaseController
     
       public function saveUpdate(){
 
-        //lay tham so tu form
-        $post = new Post($_POST["id"], $_POST["title"], $_FILES["picture"]["name"], $_POST["content"], $_POST["categoryid"], date('Y-m-d'), 1);
-       
         $target_dir = "../assets/img/posts/";
         $target_file = $target_dir . basename($_FILES["picture"]["name"]);
         move_uploaded_file($_FILES["picture"]["tmp_name"], $target_file);
-    
+        $picture = $_FILES["picture"]["name"] ? $_FILES["picture"]["name"] : $_POST["old_picture"]; 
+
         $post = new Post(
-              $_POST["id"], 
+              $_POST["id"],
               $_POST["title"], 
-              $_FILES["picture"]["name"], 
+              $picture, 
               $_POST["content"], 
               $_POST["categoryid"], 
               date('Y-m-d'), 
-              1
+              1 //FIXME: Member ID
           );
-
-        Post::saveNew($post);
-        //Điều hướng tới danh sách tin tức
+    
+        Post::update($post);
         header("location: index.php?controller=posts");
       }
 
