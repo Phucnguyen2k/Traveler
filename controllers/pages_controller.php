@@ -22,7 +22,7 @@ class PagesController extends BaseController
     {
         $posts = Post::getRecent();
         $data = array(
-            'titlePage' => 'Home',
+            'titlePage' => 'AW',
             'posts' => $posts
         );
         $this->render('home', $data, false);

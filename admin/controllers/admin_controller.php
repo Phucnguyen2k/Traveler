@@ -4,7 +4,6 @@ require_once ('models/post.php');
 require_once ('models/category.php');
 require_once ('models/member.php');
 
-
 class AdminController extends BaseController
 {
     function __construct()
@@ -21,7 +20,7 @@ class AdminController extends BaseController
     }
     public function category()
     {
-        $categories = category::categoriesTag();
+        $categories = Category::categoriesTag();
      
         $data = array(
             'categories' => $categories
@@ -32,7 +31,7 @@ class AdminController extends BaseController
     public function member()
     {
 
-        $members = Member::all();
+            $members = Member::all();
      
         $data = array(
             'members' => $members
