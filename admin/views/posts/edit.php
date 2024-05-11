@@ -15,10 +15,9 @@
             <div class="mb-3" >
             <input type="hidden" name="old_picture" value="<?php echo $post->picture; ?>">
             <img style="width: 100%;" class="img-fluid rounded"
-                            src="../assets/img/posts/<?php echo !empty($post->picture) ? $post->picture : 'blank.webp' ?>" alt="">
+                            src="../assets/img/posts/<?php echo !empty($post->picture) ? $post->picture : 'blank.jpg' ?>" alt="">
             </div>
             <div class="mb-3">
-                <label for="picture" class="form-label">Picture</label>
                 <input type="file" class="form-control" id="picture" name="picture" accept="image/*" value="<?php echo $post->picture; ?>">
             </div>
         </div>
@@ -39,12 +38,12 @@
 
         <div class="mb-3">
         <label for="member" class="form-label">Member: </label>
-        <input class="form-control" list="members" name="member" id="member" value="<?php echo $post->member->name; ?>">
+        <input class="form-control" list="members" name="member" id="member" value="<?php echo $post->member->id; ?>">
         <datalist id="members">
                 <?php 
                 foreach ($members as $member){
                 ?>
-                <option value="<?php echo $member->name; ?>"><?php echo $member->name; ?></option>
+                <option value="<?php echo $member->id; ?>"><?php echo $member->name; ?></option>
                 <?php
                 };
                 ?>

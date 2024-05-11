@@ -33,7 +33,6 @@ class Member
         return new Member($item['id'], $item['name'], $item['avatar']);
     }
 
-    //TODO: CUID Member
     static function add($member)
     {
         $db = DB::getInstance();
@@ -52,6 +51,15 @@ class Member
             'id' => $member->id,
             'name' => $member->name,
             'avatar' => $member->avatar
+        ]);
+    }
+
+    static function delete($member)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare('DELETE FROM members WHERE id = :id');
+        $req->execute([
+            'id' => $member
         ]);
     }
 }

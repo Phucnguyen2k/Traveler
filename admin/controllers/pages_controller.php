@@ -8,7 +8,6 @@ class PagesController extends BaseController
     {
         $this->folder = 'pages';
     }
- 
 
     public function home()
     {

@@ -14,69 +14,6 @@
 
 <!-- Header End -->
 
-<!-- Booking Start -->
-<!-- <div class="container-fluid booking mt-5">
-    <div class="container pb-5">
-        <form action="" method="post">
-        <div class="bg-light shadow rounded" style="padding: 30px;">
-            <div class="row align-items-center" style="min-height: 60px;">
-                <div class="col-md-10">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected>Category</option>
-                                    <?php 
-                                    foreach ($filter as $cate) {
-                                       
-                                        ?>
-                                        <option value="<?php echo $cate['id']; ?>"><?php echo $cate['title']; ?></option>
-                                        <?php
-                                    }
-                                     ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <div class="date" id="date1" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input"
-                                        placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <div class="date" id="date2" data-target-input="nearest">
-                                    <input type="text" class="form-control p-4 datetimepicker-input"
-                                        placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="mb-3 mb-md-0">
-                                <select class="custom-select px-4" style="height: 47px;">
-                                    <option selected>Duration</option>
-                                    <option value="1">Duration 1</option>
-                                    <option value="2">Duration 1</option>
-                                    <option value="3">Duration 1</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-primary btn-block" type="submit" name="filter"
-                        style="height: 47px; margin-top: -2px;">Submit</button>
-                </div>
-            </div>
-        </div>
-        </form>
-    
-    </div>
-</div> -->
-<!-- Booking End -->
-
 
 <!-- Blog Start -->
 <div class="container-fluid">
@@ -186,29 +123,16 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Category List -->
+                <!-- Tag Cloud -->
                 <div class="mb-5">
-                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h4>
-                    <div class="bg-white" style="padding: 30px;">
-                        <ul class="list-inline m-0">
-
-                            <?php foreach ($tags as $tag):
-                          
-                                ?>
-                                <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>"><i class="fa fa-angle-right text-primary mr-2"></i>
-                                        <?php echo $tag->title; ?></a>
-                                    <span class="badge badge-primary badge-pill"><?php echo $tag->amount; ?></span>
-                                </li>
-                            <?php endforeach; ?>
-
-
-
-                        </ul>
+                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h4>
+                        <div class="d-flex flex-wrap m-n1">
+                        <?php foreach ($tags as $tag):
+                          ?>
+                            <a href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>" class="btn btn-light m-1"><?php echo $tag->title; ?></a>
+                      <?php endforeach; ?>
+                        </div>
                     </div>
-                </div>
-
                 <!-- Recent Post -->
                 <div class="mb-5">
                     <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>

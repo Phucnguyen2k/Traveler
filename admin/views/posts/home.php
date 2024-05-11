@@ -11,13 +11,11 @@
     <li class="nav-item ">
         <a class="nav-link rounded" href="?controller=members&action=home">Member</a>
     </li>
-    <li class="nav-item ml-3">
-        <a class="btn rounded bg-primary text-white ml-auto " href="?controller=posts&action=add" data-bs-toggle="tooltip" title="Add Blog">
-            <i class="fa-solid fa-plus"></i>
-        </a>
-    </li>
+       
     </ul>
-
+    <a class="btn rounded bg-primary text-white ml-auto mb-2" href="?controller=posts&action=add" data-bs-toggle="tooltip" title="Add Blog">
+            Add Blog  <i class="fa-solid fa-plus"></i>
+        </a>
    <div class="">
    <table class="table table-bordered table-striped">
         <thead>
@@ -25,7 +23,7 @@
                 <th>No.</th>
                 <th>Thumbnail</th>
                 <th>Title</th>
-                <th>Date</th>
+                <th width="12%">Date</th>
                 <th>Create By</th>
                 <th>Category</th>
                 <th width="5%" ;>Edit</th>
@@ -46,7 +44,7 @@
                         <th>
                             <a href="index.php?controller=posts&action=edit&id=<?php echo $post->id ?>">
                                 <img style="width: 150px; height: 100px;" class="img-fluid rounded"
-                        src="../assets/img/posts/<?php echo !empty($post->picture) ? $post->picture : 'blank.webp' ?>" alt="">
+                        src="../assets/img/posts/<?php echo !empty($post->picture) ? $post->picture : 'blank.jpg' ?>" alt="">
                             </a>
                         </th>
                       
@@ -54,10 +52,10 @@
                             <?php echo $post->title; ?>
                         </th>
                         <th>
-                            <?php echo date_format($post->datecreated, 'd/m/Y'); ?>
+                            <?php echo date_format($post->datecreated, 'd-m-Y'); ?>
                         </th>
                         <th>
-                            <?php echo $post->member->name ?>
+                            <?php echo $post->member->name?>
                         </th>
                         <th>
                             <?php echo $post->category->title ?>

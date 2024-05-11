@@ -30,12 +30,12 @@
 
         <div class="mb-3">
         <label for="member" class="form-label">Member: </label>
-        <input class="form-control" list="members" name="createdby" id="member" value="" required>
+        <input class="form-w" list="members" name="createdby" id="member" value="" required>
         <datalist id="members">
                 <?php 
                 foreach ($members as $member){
                 ?>
-                <option value="<?php echo $member->name; ?>"><?php echo $member->name; ?></option>
+                <option value="<?php echo $member->id; ?>"><?php echo $member->name; ?></option>
                 <?php
                 };
                 ?>

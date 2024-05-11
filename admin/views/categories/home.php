@@ -23,7 +23,6 @@
         </div>
     </form> 
       
-   
    <div class="">
    <table class="table table-bordered table-striped">
         <thead>
@@ -48,6 +47,7 @@
                         </th>
                         <th>
                             <?php echo $category->title; ?>
+                            </a>
                         </th>
                         <th>
                             <a href="index.php?controller=categories&action=edit&id=<?php echo $category->id  ?>" class="btn btn-warning btn-sm rounded"><i

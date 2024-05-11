@@ -59,4 +59,10 @@ class MembersController extends BaseController
         Member::edit($member);
         header("location:?controller=members&action=home");
     }
+
+    public function delete(){
+        $id = $_GET["id"];
+        Member::delete($id);
+        header("location: index.php?controller=members");
+      }
 }

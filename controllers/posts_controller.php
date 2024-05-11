@@ -18,11 +18,11 @@ class PostsController extends BaseController
         $tags = Category::categoriesTag();
         $filter = Category::filter();
 
-            $data = array(
-            'posts' => $posts,
-            'postRecent' => $postRecent,
-            'tags' => $tags,
-            'filter' => $filter
+        $data = array(
+        'posts' => $posts,
+        'postRecent' => $postRecent,
+        'tags' => $tags,
+        'filter' => $filter
         );
         $this->render('home', $data);
     }
@@ -63,10 +63,10 @@ class PostsController extends BaseController
     {
         $id = $_GET["id"];
         $post = Post::get($id);
+        
         $posts = Post::getRecent();
         $tags = Category::categoriesTag();
         $member = Member::get($post->createdby);
-       
 
         $data = array(
             'post' => $post,

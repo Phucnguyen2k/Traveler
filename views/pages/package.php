@@ -1,5 +1,5 @@
 <?php
 require_once ("views\layouts\layoutPart\headerNav.php");
 
-layoutParts('package');
-layoutParts('destination');
+require_once ("views\layouts\layoutPart\package.php");
+require_once ("views\layouts\layoutPart\destination.php");

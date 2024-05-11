@@ -26,6 +26,7 @@ class Post
         $this->content = $content;
         $this->categoryid = $categoryid;
         $this->datecreated = date_create($datecreated);
+        // $this->datecreated = ($datecreated);
         $this->createdby = $createdby;
         $this->category = Category::get($categoryid);
         $this->member = Member::get($createdby);
@@ -36,7 +37,7 @@ class Post
     {
         $list = [];
         $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM posts');
+        $req = $db->query('SELECT * FROM posts order by datecreated desc');
         foreach ($req->fetchAll() as $item) {
             $list[] = new Post(
                 $item['id'],
@@ -152,13 +153,49 @@ class Post
         }
 
         return $list;
+    } 
+
+    //CRUD: POST
+    static function saveNew($post)
+    {
+        $db = DB::getInstance();
+        $query = 'INSERT INTO posts (title, picture, content, categoryid, datecreated, createdby) 
+        VALUES (:title, :picture, :content, :categoryid, :datecreated, :createdby)';
+
+        $stmt = $db->prepare($query);
+        $stmt->execute([
+            'title' => $post->title,
+            'picture' => $post->picture,
+            'content' => $post->content,
+            'categoryid' => $post->category->id,
+            'datecreated' => date('Y-m-d'),
+            'createdby' => $post->member->id,
+        ]);
     }
+    static function update($post)
+    {
+        $db = DB::getInstance();
+        $query = 'UPDATE posts 
+                 SET title = :title, picture = :picture, content = :content, categoryid = :categoryid, datecreated = :datecreated, createdby = :createdby 
+                 WHERE id = :post_id';
+        $stmt = $db->prepare($query);
+        $stmt->execute([
+            'title' => $post->title,
+            'picture' => $post->picture,
+            'content' => $post->content,
+            'categoryid' => $post->category->id,
+            'datecreated' => date('Y-m-d'),
+            'createdby' => $post->member->id,
+            'post_id' => $post->id
+        ]);
+    }
+
+    //Complete
     static function delete($id)
     {
-        echo "Ham Delete";
-        // $db = DB::getInstance();
-        // $query = 'DELETE FROM posts WHERE id = :post_id';
-        // $stmt = $db->prepare($query);
-        // $stmt->execute(['post_id' => $id]);
+        $db = DB::getInstance();
+        $query = 'DELETE FROM posts WHERE id = :post_id';
+        $stmt = $db->prepare($query);
+        $stmt->execute(['post_id' => $id]);
     }
 }

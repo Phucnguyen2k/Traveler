@@ -11,12 +11,6 @@ class PagesController extends BaseController
     {
         $this->folder = 'pages';
     }
-    // public function posts()
-    // {
-    //     $posts = Post::all();
-    //     $data = array('home' => $posts);
-    //     $this->render('home', $data);
-    // }
 
     public function home()
     {
@@ -25,7 +19,7 @@ class PagesController extends BaseController
             'titlePage' => 'AW',
             'posts' => $posts
         );
-        $this->render('home', $data, false);
+        $this->render('home', $data);
     }
     public function about()
     {
@@ -33,7 +27,7 @@ class PagesController extends BaseController
             'titlePage' => 'About',
             'header' => 'ABOUT'
         );
-        $this->render('about', $data, true);
+        $this->render('about', $data);
     }
     public function services()
     {
@@ -41,7 +35,7 @@ class PagesController extends BaseController
             'titlePage' => 'Services',
             'header' => 'SERVICES'
         );
-        $this->render('services', $data, true);
+        $this->render('services', $data);
     }
 
     public function package()
@@ -50,16 +44,11 @@ class PagesController extends BaseController
             'titlePage' => 'Package',
             'header' => 'PACKAGE'
         );
-        $this->render('package', $data, true);
-    }
-
-    public function contact()
-    {
+        $this->render('package', $data);
     }
 
     public function error()
     {
         $this->render('error');
     }
-
 }

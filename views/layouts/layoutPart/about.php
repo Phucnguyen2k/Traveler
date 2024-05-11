@@ -8,7 +8,7 @@
                 </div>
             </div>
             <div class="col-lg-6 pt-5 pb-lg-5">
-                <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
+                <div class="about-text bg-white p-4 p-lg-5 my-lg-5 rounded">
                     <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
                     <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
                     <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore

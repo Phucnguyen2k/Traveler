@@ -32,5 +32,34 @@ class Member
 
         return new Member($item['id'], $item['name'], $item['avatar']);
     }
-     
+
+    static function add($member)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare('INSERT INTO members (name, avatar) VALUES (:name, :avatar)');
+        $req->execute([
+            'name' => $member->name,
+            'avatar' => $member->avatar
+        ]);
+    }
+
+    static function edit($member)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare('UPDATE members SET name = :name, avatar = :avatar WHERE id = :id');
+        $req->execute([
+            'id' => $member->id,
+            'name' => $member->name,
+            'avatar' => $member->avatar
+        ]);
+    }
+
+    static function delete($member)
+    {
+        $db = DB::getInstance();
+        $req = $db->prepare('DELETE FROM members WHERE id = :id');
+        $req->execute([
+            'id' => $member
+        ]);
+    }
 }

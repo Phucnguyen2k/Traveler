@@ -12,13 +12,6 @@ class Category
         $this->title = $title;
     }
 
-    // function __construct($id, $title, $amount)
-    // {
-    //     $this->id = $id;
-    //     $this->title = $title;
-    //     $this->amount = $amount;
-    // }
-
     static function all()
     {
         $list = [];
@@ -85,26 +78,18 @@ class Category
 
     static function get($id)
     {
-        // $db = DB::getInstance();
-        // $req = $db->query('SELECT * FROM categories WHERE id = ' . $id);
-        // $item = $req->fetch();
-        // return new Category($item['id'], $item['title']);
         $db = DB::getInstance();
         $req = $db->query('SELECT * FROM categories WHERE id = ' . $id);
         
-        // Kiểm tra xem truy vấn có trả về kết quả không
         if ($req) {
             $item = $req->fetch();
-            // Kiểm tra xem có dữ liệu trả về không
             if ($item) {
                 $amount = isset($item['amount']) ? $item['amount'] : null;
                 return new Category($item['id'], $item['title'], $amount);
             } else {
-                // Trả về giá trị mặc định hoặc xử lý lỗi khác
                 return null; // hoặc trả về một giá trị mặc định khác
             }
         } else {
-            // Xử lý lỗi nếu có
             return null; // hoặc trả về một giá trị mặc định khác
         }
     }

@@ -53,11 +53,11 @@
                         </th>
                      
                         <th>
-                            <a href="index.php?controller=members&action=edit&id=<?php echo $member->id  ?>" class="btn btn-warning btn-sm rounded"><i
-                                    class="fa-solid fa-pen-to-square"></i> </a>
+                            <a href="index.php?controller=members&action=edit&id=<?php echo $member->id  ?>" class="btn btn-warning btn-sm rounded">
+                            <i class="fa-solid fa-pen-to-square"></i> 
                         </th>
                         <th>
-                            <a href="?module=members&action=delete&id=<?php echo $member->id  ?>"
+                            <a href="?controller=members&action=delete&id=<?php echo $member->id  ?>"
                                 onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm rounded"><i
                                     class="fa-solid fa-trash"></i> </a>
                         </th>
@@ -110,9 +110,9 @@
       </div>
 
       <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-danger rounded" data-bs-dismiss="modal">Close</button>
+      </div> -->
 
     </div>
   </div>

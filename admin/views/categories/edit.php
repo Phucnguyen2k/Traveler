@@ -6,7 +6,7 @@
     <form action="index.php?controller=categories&action=save" method="POST" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Name Category</label>
-            <input type="text" class="form-control rounded" id="title" name="title" required value="<?php echo $category->title; ?>">
+            <input type="text" class="form-control rounded col-4" id="title" name="title" required value="<?php echo $category->title; ?>">
         </div>
         <input type="hidden" class="form-control " id="id" name="id" required value="<?php echo $category->id; ?>">
         <button type="submit" class="btn btn-primary rounded">Update</button>

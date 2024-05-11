@@ -8,6 +8,7 @@
                 <input type="hidden" class="form-control" id="old_avatar" name="old_avatar" value="<?php echo $member->avatar; ?>">
             <div class="row">
                 <div class="mb-3 col-3">
+                <p class="fw-bold">ID: <?php echo $member->id; ?></p>         
                 <label for="avatar" class="form-label d-block">Avatar</label>
                     <img src="../assets/img/avatar/<?php echo !empty($member->avatar) ? $member->avatar : 'non-avatar.jpg'; ?>"
                                             class="img-fluid mx-auto mb-3 rounded"

@@ -6,7 +6,7 @@
                 <img class="w-100" src="assets/img/carousel-1.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
+                        <h4 class="text-white text-uppercase mb-md-3">AW</h4>
                         <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
                 <img class="w-100" src="assets/img/carousel-2.jpg" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">Tours & Travel</h4>
+                        <h4 class="text-white text-uppercase mb-md-3">demo</h4>
                         <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
                     </div>
                 </div>
@@ -37,13 +37,14 @@
 
 <?php
 // layoutParts('booking');
-layoutParts('about');
-layoutParts('feature');
-require_once ("views\layouts\layoutPart\blog.php");
-layoutParts('destination');
-layoutParts('service');
-layoutParts('package');
-layoutParts('team');
-layoutParts('testimonial');
-layoutParts('registration');
+require_once ("views/layouts/layoutPart/about.php");
+require_once ("views/layouts/layoutPart//feature.php");
+require_once ("views/layouts/layoutPart/blog.php");
+require_once ("views/layouts/layoutPart//destination.php");
+require_once ("views/layouts/layoutPart//service.php");
+require_once ("views/layouts/layoutPart//package.php");
+require_once ("views/layouts/layoutPart//team.php");
+require_once ("views/layouts/layoutPart//testimonial.php");
+require_once ("views/layouts/layoutPart//registration.php");
+
 ?>

@@ -1,6 +1,6 @@
 <!-- Blog Start -->
 <div class="container-fluid py-5">
-    <div class="container py-5">
+    <div class="container pb-5">
         <div class="row">
             <div class="col-lg-8">
                 <!-- Blog Detail Start -->
@@ -61,46 +61,16 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Search Form -->
-                <!-- <div class="mb-5">
-                    <div class="bg-white" style="padding: 30px;">
-                        <div class="input-group">
-                            <input type="text" class="form-control p-4" placeholder="Keyword">
-                            <div class="input-group-append">
-                                <span class="input-group-text bg-primary border-primary text-white"><i
-                                        class="fa fa-search"></i></span>
-                            </div>
+                 <!-- Tag Cloud -->
+                 <div class="mb-5">
+                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Catgory</h4>
+                        <div class="d-flex flex-wrap m-n1">
+                        <?php foreach ($tags as $tag):
+                          ?>
+                            <a href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>" class="btn btn-light m-1"><?php echo $tag->title; ?></a>
+                      <?php endforeach; ?>
                         </div>
                     </div>
-                </div> -->
-
-                <!-- Category List -->
-                <div class="mb-5 ">
-                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Categories</h4>
-                    <div class="bg-white rounded" style="padding: 30px;">
-                        <ul class="list-inline m-0">
-
-                        <?php foreach ($tags as $tag):
-                          
-                          ?>
-                          <li class="mb-3 d-flex justify-content-between align-items-center">
-                              <a class="text-dark" href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>"><i class="fa fa-angle-right text-primary mr-2"></i>
-                                  <?php echo $tag->title; ?></a>
-                              <span class="badge badge-primary badge-pill"><?php echo $tag->amount; ?></span>
-                          </li>
-                      <?php endforeach; ?>
-
-
-
-                        </ul>
-                    </div>
-                </div>
-                <!-- Recent Post -->
-
-               
-
-
             </div>
         </div>
      <!-- Recent Post -->
