@@ -3,20 +3,20 @@
     <div id="header-carousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="w-100" src="assets/img/carousel-1.jpg" alt="Image">
+                <img class="w-100" src="assets/img/carousel-1.png" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">AW</h4>
-                        <h1 class="display-3 text-white mb-md-4">Let's Discover The World Together</h1>
+                        <h4 class="text-white text-uppercase mb-md-3">AnimeWorld</h4>
+                        <h1 class="display-3 text-white mb-md-4">Let's Explore The Anime Universe Together</h1>
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img class="w-100" src="assets/img/carousel-2.jpg" alt="Image">
+                <img class="w-100" src="assets/img/carousel-2.png" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">demo</h4>
-                        <h1 class="display-3 text-white mb-md-4">Discover Amazing Places With Us</h1>
+                        <h4 class="text-white text-uppercase mb-md-3">AnimeWorld</h4>
+                        <h1 class="display-3 text-white mb-md-4">Discover Amazing Manga With Us</h1>
                     </div>
                 </div>
             </div>

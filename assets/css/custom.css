@@ -20,3 +20,24 @@
   background-size: 100% 50%; /* Set the size of the gradient */
   background-position: bottom; /* Align the gradient to the bottom */
 } 
+
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.end {
+  right: 0;
+}
+
+.right {
+  left: 0;
+}
+
+.bg-a {
+  background-color: rgba(0, 0, 0, 0.2);
+}

@@ -7,7 +7,7 @@
 
             </h3>
             <div class="d-inline-flex text-white">
-                <p class="m-0 text-uppercase"><a class="text-white" href="http://localhost/traveler/index.php">Home</a>
+                <p class="m-0 text-uppercase"><a class="text-white" href="index.php">Home</a>
                 </p>
                 <i class="fa fa-angle-double-right pt-1 px-3"></i>
                 <p class="m-0 text-uppercase">
