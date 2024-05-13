@@ -27,7 +27,7 @@
                                 <?php echo $post->member->name; ?>
                             </a>
                             <span class="text-primary px-2">|</span> -->
-                            <a href="?controller=posts&action=postByCategory&id=<?php echo $post->categoryid ?>" class="btn btn-light m-1 shadow-sm"><?php echo $post->category->title; ?></a>
+                            <a href="?controller=posts&action=postByCategory&id=<?php echo $post->categoryid ?>" class="btn bg-white text-white m-1 shadow-sm"><?php echo $post->category->title; ?></a>
                         </div>
                     </div>
                 </div>
@@ -44,30 +44,24 @@
                     <p>Conset elitr erat vero dolor ipsum et diam, eos dolor lorem, ipsum sit no ut est ipsum erat kasd
                         amet elitr</p>
                     <div class="d-flex justify-content-center">
-                        <a class="text-primary px-2" href="">
-                            <i class="fab fa-facebook-f"></i>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-reddit"></i>
                         </a>
-                        <a class="text-primary px-2" href="">
+                        <a class="text-primary px-3" href="">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a class="text-primary px-2" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-primary px-2" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-primary px-2" href="">
+                        <a class="text-primary px-3" href="">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
                 </div>
                  <!-- Tag Cloud -->
-                 <div class="mb-5">
-                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Catgory</h4>
+                <div class="mb-5">
+                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Thể loại</h4>
                         <div class="d-flex flex-wrap m-n1">
                         <?php foreach ($tags as $tag):
                           ?>
-                            <a href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>" class="btn btn-light m-1"><?php echo $tag->title; ?></a>
+                            <a href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>" class="btn m-1 bg-white text-white rounded "><?php echo $tag->title; ?></a>
                       <?php endforeach; ?>
                         </div>
                     </div>

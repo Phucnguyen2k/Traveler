@@ -6,7 +6,7 @@
                 <img class="w-100" src="assets/img/carousel-1.png" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">AnimeWorld</h4>
+                        <h4 class="text-white text-uppercase mb-md-3">Anime World</h4>
                         <h1 class="display-3 text-white mb-md-4">Let's Explore The Anime Universe Together</h1>
                     </div>
                 </div>
@@ -15,7 +15,7 @@
                 <img class="w-100" src="assets/img/carousel-2.png" alt="Image">
                 <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase mb-md-3">AnimeWorld</h4>
+                        <h4 class="text-white text-uppercase mb-md-3">Anime World</h4>
                         <h1 class="display-3 text-white mb-md-4">Discover Amazing Manga With Us</h1>
                     </div>
                 </div>
@@ -36,7 +36,6 @@
 <!-- Carousel End -->
 
 <?php
-// layoutParts('booking');
 require_once ("views/layouts/layoutPart/about.php");
 require_once ("views/layouts/layoutPart//feature.php");
 require_once ("views/layouts/layoutPart/blog.php");
@@ -46,5 +45,4 @@ require_once ("views/layouts/layoutPart//package.php");
 require_once ("views/layouts/layoutPart//team.php");
 require_once ("views/layouts/layoutPart//testimonial.php");
 require_once ("views/layouts/layoutPart//registration.php");
-
 ?>

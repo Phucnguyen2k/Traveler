@@ -1,15 +1,15 @@
 <div class="container">
     <h2 class="text-center text-uppercase my-5">Admin</h2>
 
-    <ul class="nav nav-pills p-2 mb-4 bg-light rounded">
+    <ul class="nav nav-pills p-2 mb-4 bg-white rounded">
     <li class="nav-item ">
-        <a class="nav-link  rounded " href="?controller=posts&action=home">Blogs</a>
+        <a class="nav-link  rounded text-white " href="?controller=posts&action=home">Blogs</a>
     </li>
     <li class="nav-item ">
         <a class="nav-link rounded active" href="?controller=categories&action=home">Category</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link rounded" href="?controller=members&action=home">Member</a>
+        <a class="nav-link rounded text-white" href="?controller=members&action=home">Member</a>
     </li>
     </ul>
     <!-- TODO: Rename Category -->

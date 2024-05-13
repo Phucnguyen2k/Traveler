@@ -12,7 +12,7 @@
         </div>
         <div class="mb-3">
             <label for="picture" class="form-label">Picture</label>
-            <input type="file" class="form-control" id="picture" name="picture" accept=".jpg,.jpeg,.png" value="">
+            <input type="file" class="form-control" id="picture" name="picture" accept=".jpg,.jpeg,.png,.webp" value="">
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Content</label>

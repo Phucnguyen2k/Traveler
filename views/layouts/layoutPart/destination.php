@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="assets/img/action.jpg" alt="">
+                    <img class="img-fluid rounded" src="assets/img/action.jpg" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">Action</h5>
                         <span>100+ Phim</span>
@@ -18,7 +18,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="assets/img/romcom.png" alt="">
+                    <img class="img-fluid rounded" src="assets/img/romcom.png" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">Romance</h5>
                         <span>120+ Phim</span>
@@ -27,7 +27,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="assets/img/fantasy.jpg" alt="">
+                    <img class="img-fluid rounded" src="assets/img/fantasy.jpg" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">Fantasy</h5>
                         <span>310+ Phim</span>
@@ -36,7 +36,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="assets/img/sci-fi.jpg" alt="">
+                    <img class="img-fluid rounded" src="assets/img/sci-fi.jpg" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">Sci-fi</h5>
                         <span>400+ Phim</span>
@@ -45,7 +45,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="assets/img/adventure.jpg" alt="">
+                    <img class="img-fluid rounded" src="assets/img/adventure.jpg" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">Adventure</h5>
                         <span>700+ Phim</span>
@@ -54,7 +54,7 @@
             </div>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid" src="assets/img/isekai.jpg" alt="">
+                    <img class="img-fluid rounded" src="assets/img/isekai.jpg" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
                         <h5 class="text-white">Isekai</h5>
                         <span>1000+ Phim</span>

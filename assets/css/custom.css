@@ -15,11 +15,11 @@
   left: 0;
   width: 100%;
   height: 50%; /* Adjust as needed */
-  background-image: linear-gradient(to bottom, rgba(252, 252, 252, 0), rgba(255, 255, 255, 1)); /* Gradient from transparent to semi-transparent black */
+  background-image: linear-gradient(to bottom, rgba(21, 31, 46, 0), rgba(21, 31, 46, 1)); /* Gradient from transparent to semi-transparent black */
   background-repeat: no-repeat;
   background-size: 100% 50%; /* Set the size of the gradient */
   background-position: bottom; /* Align the gradient to the bottom */
-} 
+}   
 
 
 .top {
@@ -40,4 +40,45 @@
 
 .bg-a {
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-white {
+  background-color: #151f2e !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #9aadbd;
+}
+
+a.text-primary:hover, a.text-primary:focus {
+  color: #ccd5dd !important;
+}
+a:hover {
+  color: #ccd5dd !important;
+}
+
+.blog-item:hover {
+  box-shadow: 0 0 30px #404f64 !important;
+}
+
+.service-item:hover {
+  box-shadow: 0 0 30px #404f64 !important;
+}
+
+.package-item:hover {
+  box-shadow: 0 0 30px #404f64 !important;
+}
+
+.team-item:hover {
+  box-shadow: 0 0 30px #404f64 !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+  box-shadow: 0 0 30px #404f64 !important;
+}
+
+/* admin */
+a.bg-primary:hover, .btn-primary:hover {
+  background: #404f64 !important;
+  border-color: #404f64;
 }

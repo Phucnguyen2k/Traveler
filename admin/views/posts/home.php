@@ -1,15 +1,15 @@
 <div class="container">
     <h2 class="text-center text-uppercase my-5">Admin</h2>
  
-    <ul class="nav nav-pills p-2 mb-4 bg-light rounded">
+    <ul class="nav nav-pills p-2 mb-4 bg-white rounded">
     <li class="nav-item ">
         <a class="nav-link rounded active" href="?controller=posts&action=home">Blogs</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link rounded" href="?controller=categories&action=home">Category</a>
+        <a class="nav-link rounded text-white" href="?controller=categories&action=home">Category</a>
     </li>
     <li class="nav-item ">
-        <a class="nav-link rounded" href="?controller=members&action=home">Member</a>
+        <a class="nav-link rounded text-white" href="?controller=members&action=home">Member</a>
     </li>
        
     </ul>
@@ -17,7 +17,7 @@
             Add Blog  <i class="fa-solid fa-plus"></i>
         </a>
    <div class="">
-   <table class="table table-bordered table-striped">
+   <table class="table table-bordered table-striped table-white">
         <thead>
             <tr>
                 <th>No.</th>

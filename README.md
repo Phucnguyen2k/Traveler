@@ -1,5 +1,8 @@
 AW - Your Anime, Manga and Light Novel Hub!
 
-- Main color: 29a6ff
+- body
+  - background color: F3F3F3
+  - color: 656565 -> 159,173,189
+- Main color: 7AB730 -> 29a6ff
 
-Romance, Fantasy, Sci-fi, Adventure, Isekai
+- box-shawdow: 404f64

@@ -88,24 +88,18 @@
             <div class="col-lg-4 mt-5 mt-lg-0">
                 <!-- Author Bio -->
                 <div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4">
-                    <img src="assets/img/user.jpg" class="img-fluid mx-auto mb-3" style="width: 100px;">
+                    <img src="assets/img/avatar/117289013_p0_square1200.jpg" class="img-fluid mx-auto mb-3" style="width: 100px;">
                     <h3 class="text-primary mb-3">John Doe</h3>
                     <p>Conset elitr erat vero dolor ipsum et diam, eos dolor lorem, ipsum sit no ut est ipsum erat kasd
                         amet elitr</p>
                     <div class="d-flex justify-content-center">
-                        <a class="text-primary px-2" href="">
-                            <i class="fab fa-facebook-f"></i>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-reddit"></i>
                         </a>
-                        <a class="text-primary px-2" href="">
+                        <a class="text-primary px-3" href="">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a class="text-primary px-2" href="">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a class="text-primary px-2" href="">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-primary px-2" href="">
+                        <a class="text-primary px-3" href="">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
@@ -115,7 +109,7 @@
                 <div class="mb-5">
                     <div class="bg-white" style="padding: 30px;">
                         <div class="input-group">
-                            <input type="text" class="form-control p-4" placeholder="Keyword">
+                            <input type="text" class="form-control p-4 bg-white" placeholder="tìm kiếm">
                             <div class="input-group-append">
                                 <span class="input-group-text bg-primary border-primary text-white"><i
                                         class="fa fa-search"></i></span>
@@ -125,17 +119,17 @@
                 </div>
                 <!-- Tag Cloud -->
                 <div class="mb-5">
-                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Tag Cloud</h4>
+                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Thể loại</h4>
                         <div class="d-flex flex-wrap m-n1">
                         <?php foreach ($tags as $tag):
                           ?>
-                            <a href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>" class="btn btn-light m-1"><?php echo $tag->title; ?></a>
+                            <a href="?controller=posts&action=postByCategory&id=<?php echo $tag->id ?>" class="btn m-1 bg-white text-white rounded "><?php echo $tag->title; ?></a>
                       <?php endforeach; ?>
                         </div>
                     </div>
                 <!-- Recent Post -->
                 <div class="mb-5">
-                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>
+                    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Bài đăng gần đây</h4>
                     <?php
                     foreach ($postRecent as $post) {
 
