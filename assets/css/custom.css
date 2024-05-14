@@ -21,7 +21,7 @@
   background-position: bottom; /* Align the gradient to the bottom */
 }   
 
-
+/* Code label for lightnovel */
 .top {
   top: 0;
 }
@@ -77,8 +77,14 @@ a:hover {
   box-shadow: 0 0 30px #404f64 !important;
 }
 
+.bg-registration {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-1.png), no-repeat center center;
+  background-size: cover;
+}
+
 /* admin */
 a.bg-primary:hover, .btn-primary:hover {
   background: #404f64 !important;
   border-color: #404f64;
 }
+

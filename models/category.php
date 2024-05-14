@@ -12,94 +12,71 @@ class Category
         $this->title = $title;
     }
 
-    static function all()
+    static function listCategories($sql)
     {
         $list = [];
         $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM categories order by id desc');
+        $req = $db->query($sql);
 
         foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
-            $amount = isset($item['amount']) ? $item['amount'] : null;
-            $list[] = new Category($item['id'], $item['title'],$amount);
+            $list[] = new Category($item['id'], $item['title']);
         }
 
         return $list;
     }
-
-    static function add($title)
+    static function all()
     {
-        $database = DB::getInstance();
-        $query = 'INSERT INTO categories (title) VALUES (:title)';
-        $statement = $database->prepare($query);
-        $statement->execute(['title' => $title]);
-    }
-
-    static function delete($id)
-    {
-        $db = DB::getInstance();
-        $query = 'DELETE FROM categories WHERE id = :id';
-        $stmt = $db->prepare($query);
-        $stmt->execute(['id' => $id]);
+        $sql = 'SELECT * FROM categories order by id desc';
+        return Category::listCategories($sql);
     }
 
 
     static function categoriesTag()
     {
-        $list = [];
-        $db = DB::getInstance();
-
-        $req = $db->query('SELECT categories.id, categories.title, COUNT(*) as amount 
-                           FROM categories LEFT JOIN posts ON categories.id = posts.categoryid 
-                           GROUP BY categories.id, categories.title'
-                            );
-
-  
-        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
-
-            $list[] = new Category(
-                $item['id'],
-                $item['title'],
-                $item['amount']
-            );
-        }
-
-        return $list;
+        $sql = 'SELECT categories.id, categories.title
+                FROM categories';
+        return Category::listCategories($sql);
 
     }
     static function filter() {
-        $listCate = [];
+        $list = [];
         $db = DB::getInstance();
-
         $req = $db->query('SELECT * FROM categories');
-        $listCate = $req->fetchAll();
-        
-        return $listCate;
+        $list = $req->fetchAll(PDO::FETCH_ASSOC);
+        return $list;
     }
 
     static function get($id)
     {
+        $sql = 'SELECT * FROM categories WHERE id = ' . $id;
         $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM categories WHERE id = ' . $id);
-        
-        if ($req) {
-            $item = $req->fetch();
-            if ($item) {
-                $amount = isset($item['amount']) ? $item['amount'] : null;
-                return new Category($item['id'], $item['title'], $amount);
-            } else {
-                return null; // hoặc trả về một giá trị mặc định khác
-            }
-        } else {
-            return null; // hoặc trả về một giá trị mặc định khác
-        }
+        $req = $db->query($sql);
+        $item = $req->fetch(PDO::FETCH_ASSOC);
+        return new Category($item['id'], $item['title']);
     }
 
+    //CRUD
     static function save($category)
     {
-        $db = DB::getInstance();
         $sql = "UPDATE categories SET title=? WHERE id=?";
+        $db = DB::getInstance();
         $stmt = $db->prepare($sql);
         $stmt->execute([$category->title, $category->id]);
     }
 
+    static function add($title)
+    {
+        $sql = 'INSERT INTO categories (title) VALUES (:title)';
+        $database = DB::getInstance();
+        $statement = $database->prepare($sql);
+        $statement->execute(['title' => $title]);
+    }
+
+    static function delete($id)
+    {
+        $sql = 'DELETE FROM categories WHERE id = :id';
+        $db = DB::getInstance();
+        $stmt = $db->prepare($sql);
+        $stmt->execute(['id' => $id]);
+    }
 }

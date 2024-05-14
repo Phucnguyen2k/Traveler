@@ -4,14 +4,21 @@
 <head>
     <meta charset="utf-8">
     <title>
-        <?php echo !empty($data['titlePage']) ? $data['titlePage'] : 'Traveler'; ?>
+        <?php echo !empty($data['titlePage']) ? $data['titlePage'] : 'AnimeWorld'; ?>
     </title>
+    <?php
+    $imagePath = !empty($post->picture) ? 'assets/img/posts/' . $post->picture : 'assets/img/carousel-1.png';
+    $titleWeb =  !empty($post->title) ? $post->title . $post->title : 'Anime World';
+    ?>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
+    <meta content="AnimeWorld - Your Anime, Manga and Light Novel Hub!  " name="keywords">
+    <meta name="description" content="AnimeWorld - Your Anime, Manga and Light Novel Hub!">
+    <meta property="og:site_name" content="Anime World">
+    <meta property="og:title" content="<?php echo $titleWeb; ?>">
+    <meta property="og:image" content="<?php echo $imagePath; ?>">
     <!-- Favicon -->
-    <link href="./assets/img/favicon.ico" rel="icon">
+    <link rel="icon" href="/assets/img/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -60,7 +67,7 @@
     <?= @$content ?>
     <!-- Footer Start -->
     <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+    <div class="container-fluid bg-white text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
         <div class="row">
             <div class="col-lg-9 col-md-6 mb-5">
                 <a href="" class="navbar-brand  mb-2">
@@ -115,9 +122,6 @@
 
     <!-- Template Javascript -->
     <script src="assets/js/main.js"></script>
-
-  
-
 </body>
 
 </html>

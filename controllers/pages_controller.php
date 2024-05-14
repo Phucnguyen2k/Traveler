@@ -21,34 +21,24 @@ class PagesController extends BaseController
         );
         $this->render('home', $data);
     }
+
+    
     public function about()
     {
-        $data = array(
-            'titlePage' => 'About',
-            'header' => 'ABOUT'
-        );
-        $this->render('about', $data);
+        $this->showPage('about');
     }
     public function services()
     {
-        $data = array(
-            'titlePage' => 'Services',
-            'header' => 'SERVICES'
-        );
-        $this->render('services', $data);
+        $this->showPage('services');
     }
 
     public function package()
     {
-        $data = array(
-            'titlePage' => 'Package',
-            'header' => 'PACKAGE'
-        );
-        $this->render('package', $data);
+        $this->showPage('package');
     }
 
     public function error()
     {
-        $this->render('error');
+        $this->showPage('error');
     }
 }

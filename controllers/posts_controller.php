@@ -19,10 +19,10 @@ class PostsController extends BaseController
         $filter = Category::filter();
 
         $data = array(
-        'posts' => $posts,
-        'postRecent' => $postRecent,
-        'tags' => $tags,
-        'filter' => $filter
+            'posts' => $posts,
+            'postRecent' => $postRecent,
+            'tags' => $tags,
+            'filter' => $filter
         );
         $this->render('home', $data);
     }
@@ -43,22 +43,6 @@ class PostsController extends BaseController
         $this->render('home', $data);
     }
 
-    public function postByMember()  
-    {
-        $id = $_GET["id"];
-        $posts = Post::allPostByCate($id);
-        $postRecent = Post::getRecent();
-        $tags = Category::categoriesTag();
-        $category = Category::get($id);
-
-            $data = array(
-            'posts' => $posts,
-            'postRecent' => $postRecent,
-            'tags' => $tags,
-            'category' => $category
-        );
-        $this->render('home', $data);
-    }
     public function details()
     {
         $id = $_GET["id"];
@@ -72,7 +56,8 @@ class PostsController extends BaseController
             'post' => $post,
             'posts' => $posts,
             'tags' => $tags,
-            'member' => $member
+            'member' => $member,
+            'titlePage' => $post->title
         );
         $this->render('details', $data);
     }

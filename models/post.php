@@ -25,19 +25,18 @@ class Post
         $this->content = $content;
         $this->categoryid = $categoryid;
         $this->datecreated = date_create($datecreated);
-        // $this->datecreated = ($datecreated);
         $this->createdby = $createdby;
         $this->category = Category::get($categoryid);
         $this->member = Member::get($createdby);
         $this->avatar = Member::get($createdby);
     }
 
-    static function all()
+    static function ListAllPost($sql)
     {
         $list = [];
         $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM posts order by datecreated desc');
-        foreach ($req->fetchAll() as $item) {
+        $req = $db->query($sql);
+        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
             $list[] = new Post(
                 $item['id'],
                 $item['title'],
@@ -52,10 +51,31 @@ class Post
         return $list;
     }
 
+    static function all()
+    {
+        $sql = 'SELECT * FROM posts order by datecreated desc';
+        return Post::ListAllPost($sql);
+    }
+  
+    static function getRecent()
+    {
+        $sql = 'SELECT * FROM posts ORDER by id desc  LIMIT 3';
+        return Post::ListAllPost($sql);
+    }
+
+    static function allPostByCate($Categoryid)
+    {
+        $sql = 'SELECT * FROM posts WHERE categoryid = '.$Categoryid;
+        return Post::ListAllPost($sql);
+    }
+  
+
+    //Details
     static function get($postId)
     {
-        $db = DB::getInstance();
         $query = 'SELECT * FROM posts WHERE id = :post_id';
+
+        $db = DB::getInstance();
         $stmt = $db->prepare($query);
         $stmt->execute(['post_id' => $postId]);
         $item = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -70,73 +90,13 @@ class Post
             $item['createdby'],
         );
     }
-    static function getRecent()
-    {
-        $list = [];
-        $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM posts ORDER by id desc  LIMIT 3');
-        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
-            $list[] = new Post(
-                $item['id'],
-                $item['title'],
-                $item['picture'],
-                $item['content'],
-                $item['categoryid'],
-                $item['datecreated'],
-                $item['createdby']
-            );
-        }
-
-        return $list;
-    }
-
-    static function allPostByCate($Categoryid)
-    {
-        $list = [];
-        $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM posts WHERE categoryid = '.$Categoryid);
-        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
-            $list[] = new Post(
-                $item['id'],
-                $item['title'],
-                $item['picture'],
-                $item['content'],
-                $item['categoryid'],
-                $item['datecreated'],
-                $item['createdby']
-            );
-        }
-
-        return $list;
-    }
-
-    //NOTE: filter member
-    static function allPostByMember($MemberId)
-    {
-        $list = [];
-        $db = DB::getInstance();
-        $req = $db->query('SELECT * FROM posts WHERE createdby = '.$MemberId);
-        foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
-            $list[] = new Post(
-                $item['id'],
-                $item['title'],
-                $item['picture'],
-                $item['content'],
-                $item['categoryid'],
-                $item['datecreated'],
-                $item['createdby']
-            );
-        }
-        return $list;
-    } 
 
     //TODO: CRUD: POST
     static function saveNew($post)
     {
-        $db = DB::getInstance();
         $query = 'INSERT INTO posts (title, picture, content, categoryid, datecreated, createdby) 
         VALUES (:title, :picture, :content, :categoryid, :datecreated, :createdby)';
-
+        $db = DB::getInstance();
         $stmt = $db->prepare($query);
         $stmt->execute([
             'title' => $post->title,
