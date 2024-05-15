@@ -22,14 +22,14 @@
                         <h1 class="text-white m-0">Đăng ký</h1>
                     </div>
                     <div class="card-body rounded-bottom bg-white p-5">
-                        <form>
+                        <form action="index.php?controller=pages&action=MailAW" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <input type="text" class="form-control p-4 rounded" placeholder="Vui lòng nhập tên"
-                                    required="required" />
+                                    required="required" name="name"/>
                             </div>
                             <div class="form-group">
                                 <input type="email" class="form-control p-4 rounded" placeholder="Vui lòng nhập Email"
-                                    required="required" />
+                                    required="required" name="mail"/>
                             </div>
                             <div class="form-group">
                                 <select class="custom-select px-4 rounded" style="height: 47px;">

@@ -6,3 +6,6 @@ AW - Your Anime, Manga and Light Novel Hub!
 - Main color: 7AB730 -> 29a6ff
 
 - box-shawdow: 404f64
+
+$mail->Username = 'phucnn.22th@sv.dla.edu.vn';                     //SMTP username
+$mail->Password = 'ntcu skxk wzwj aboy';

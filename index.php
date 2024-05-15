@@ -1,6 +1,6 @@
 <?php
 require_once ('connection.php');
-require_once ('includes/functions.php');
+require_once ('functions.php');
 
 if (isset($_GET['controller'])) {
     $controller = $_GET['controller'];

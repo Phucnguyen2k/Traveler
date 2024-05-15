@@ -94,7 +94,7 @@ class Post
     //Phan Trang 
   static function allHome($page)
   {
-    $start = ($page -1)*4;
+    $start = ($page -1)*6;
     $list = [];
     $db = DB::getInstance();    
     $req = $db->query('SELECT * FROM posts limit '.$start.' , 6');
