@@ -18,12 +18,5 @@ class BaseController
             header('Location: index.php?controller=pages&action=error');
         }
     }
-    function showPage($page)
-    {
-        $data = array(
-            'titlePage' => $page,
-            'header' => $page
-        );
-        $this->render($page, $data);
-    }
+  
 }

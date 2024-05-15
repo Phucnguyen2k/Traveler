@@ -7,60 +7,19 @@
         </div>
         <!-- TODO: ADD img Genres -->
         <div class="row">
+            <?php
+            foreach ($movies as $movie) {
+            ?>
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid rounded" src="assets/img/action.jpg" alt="">
+                    <img class="img-fluid rounded" src="assets/img/<?php echo $movie->thumbnail ?>" alt="">
                     <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">Action</h5>
-                        <span>100+ Phim</span>
+                        <h5 class="text-white"><?php echo $movie->name ?></h5>
+                        <span><?php echo $movie->amount; ?></span>
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid rounded" src="assets/img/romcom.png" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">Romance</h5>
-                        <span>120+ Phim</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid rounded" src="assets/img/fantasy.jpg" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">Fantasy</h5>
-                        <span>310+ Phim</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid rounded" src="assets/img/sci-fi.jpg" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">Sci-fi</h5>
-                        <span>400+ Phim</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid rounded" src="assets/img/adventure.jpg" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">Adventure</h5>
-                        <span>700+ Phim</span>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="destination-item position-relative overflow-hidden mb-2">
-                    <img class="img-fluid rounded" src="assets/img/isekai.jpg" alt="">
-                    <a class="destination-overlay text-white text-decoration-none" href="">
-                        <h5 class="text-white">Isekai</h5>
-                        <span>1000+ Phim</span>
-                    </a>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 </div>
