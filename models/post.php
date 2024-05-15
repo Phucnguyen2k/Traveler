@@ -91,6 +91,25 @@ class Post
         );
     }
 
+    //Phan Trang 
+  static function allHome($page)
+  {
+    $start = ($page -1)*4;
+    $list = [];
+    $db = DB::getInstance();    
+    $req = $db->query('SELECT * FROM posts limit '.$start.' , 6');
+    foreach ($req->fetchAll() as $item) {
+      $list[] = new Post($item['id'], $item['title'],$item['picture'], $item['content'],$item['categoryid'],$item['datecreated'],$item['createdby']);
+    }
+    return $list;
+  }
+  static function Total(){
+    $db = DB::getInstance();    
+    $req = $db->query('Select Count(*) as total from posts');
+    $item = $req->fetch();
+    return $item['total'];
+  }
+
     //TODO: CRUD: POST
     static function saveNew($post)
     {

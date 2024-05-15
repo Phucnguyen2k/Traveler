@@ -13,17 +13,23 @@ class PostsController extends BaseController
 
     public function home()
     {
-        $posts = Post::all();
+        $page = 1;
+        if(isset($_GET["page"])){
+          $page=$_GET["page"];
+        }
+        
+        $posts = Post::allHome($page);
+        $total = Post::Total();
+
         $postRecent = Post::getRecent();
         $tags = Category::categoriesTag();
         $filter = Category::filter();
-
         $data = array(
-            'posts' => $posts,
-            'postRecent' => $postRecent,
-            'tags' => $tags,
-            'filter' => $filter
-        );
+                    'posts' => $posts,
+                    'total' => $total,
+                    'postRecent' => $postRecent,
+                    'tags' => $tags,
+                    );
         $this->render('home', $data);
     }
     public function postByCategory()

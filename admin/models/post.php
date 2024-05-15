@@ -91,30 +91,6 @@ class Post
         return $list;
     }
 
-    static function filterCategory() {
-        if(isset($_GET["filter"])) {
-            $filterCategory = filterCategory();
-        }
-        $list = [];  
-        
-        $db = DB::getInstance();
-        $query = 'SELECT * FROM posts WHERE categoryid = :category_id';
-        $stmt = $db->prepare($query);
-        $stmt->execute(['category_id' => $filterCategory]);
-        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $item) {
-            $list[] = new Post(
-                $item['id'],
-                $item['title'],
-                $item['picture'],
-                $item['content'],
-                $item['categoryid'],
-                $item['datecreated'],
-                $item['createdby']
-            );
-        }
-        return $list;
-    }
-
     static function allPostByCate($Categoryid)
     {
         $list = [];
