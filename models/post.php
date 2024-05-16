@@ -128,6 +128,8 @@ class Post
     }
     static function update($post)
     {
+        // echo $post->member->id;
+        // die();
         $db = DB::getInstance();
         $query = 'UPDATE posts 
                  SET title = :title, picture = :picture, content = :content, categoryid = :categoryid, datecreated = :datecreated, createdby = :createdby 

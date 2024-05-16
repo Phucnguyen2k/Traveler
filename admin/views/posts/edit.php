@@ -31,6 +31,7 @@
                   <div class="form-group">
                     <label>Member</label>
                     <select class="form-control" name="createdby">
+                    <option value="<?php echo $post->member->id; ?>"><?php echo $post->member->name; ?></option>
                     <?php
                      foreach($members as $member){
                         ?>
@@ -43,6 +44,7 @@
                   <div class="form-group">
                     <label>Category</label>
                     <select class="form-control" name="categoryid">
+                    <option value="<?php echo $post->category->id; ?>"><?php echo $post->category->title; ?></option>
                       <?php foreach($categories as $category){
                         ?>
                     <option value="<?php echo $category->id; ?>"><?php echo $category->title; ?></option>

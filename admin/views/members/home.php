@@ -5,7 +5,7 @@
           <div class="card-header">
                   <h3><p class="text-center text-uppercase">Danh sách thành viên</p></h3>
                 </div>
-                <a class="btn btn-primary m-3 col-md-2" href="?controller=members&action=add"><i class="fa-solid fa-plus mr-3"></i>New Category</a>
+                <a class="btn btn-primary m-3 col-md-2" href="?controller=members&action=add"><i class="fa-solid fa-plus mr-3"></i>New Member</a>
                 <!-- /.card-header -->
                 <div class="card-body">
                   <table id="example2" class="table table-bordered table-hover">
