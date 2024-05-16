@@ -20,7 +20,7 @@ class Category
 
         foreach ($req->fetchAll(PDO::FETCH_ASSOC) as $item) {
             $amount = isset($item['amount']) ? $item['amount'] : null;
-            $list[] = new Category($item['id'], $item['title'],$amount);
+            $list[] = new Category($item['id'], $item['title']);
         }
 
         return $list;
@@ -59,7 +59,6 @@ class Category
             $list[] = new Category(
                 $item['id'],
                 $item['title'],
-                $item['amount']
             );
         }
 
@@ -85,7 +84,7 @@ class Category
             $item = $req->fetch();
             if ($item) {
                 $amount = isset($item['amount']) ? $item['amount'] : null;
-                return new Category($item['id'], $item['title'], $amount);
+                return new Category($item['id'], $item['title']);
             } else {
                 return null; // hoặc trả về một giá trị mặc định khác
             }

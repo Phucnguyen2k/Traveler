@@ -15,6 +15,8 @@ class PostsController extends BaseController
         $data = array('posts' => $posts);
         $this->render('home', $data);
     }
+
+    //Show page add
     public function add(){
       $posts = Post::all();
       $members = Member::all();
@@ -28,7 +30,7 @@ class PostsController extends BaseController
       $this->render('add', $data);
     }
 
-    //complete
+    //Add Form to database
     public function saveAdd()
     {
         //Thu nhap du lieu tu nguoi dung
@@ -73,7 +75,7 @@ class PostsController extends BaseController
               $_POST["content"], 
               $_POST["categoryid"], 
               date('Y-m-d'), 
-              $_POST["member"],
+              $_POST["createdby"],
           );
     
         Post::update($post);

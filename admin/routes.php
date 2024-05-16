@@ -1,7 +1,7 @@
 <?php
 $controllers = array(
   'posts' => ['home','error', 'add','saveAdd', 'saveNew', 'delete', 'edit', 'saveUpdate'],
-  'categories' => ['home','add','save','edit','delete'],
+  'categories' => ['home','add','saveNew','save','edit','delete'],
   'members' => ['home','add','save','saveAdd','saveUpdate','edit','delete'],
 ); 
 

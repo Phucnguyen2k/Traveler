@@ -27,18 +27,21 @@ class CategoriesController extends BaseController
     }
     public function add()
     {
-        $title = $_POST["title"];
-        category::add($title);
-        header("location:?controller=categories&action=home");
+        $this->render('add');
+    }
+
+    public function saveNew()
+    {
+        $name = $_POST['title'];
+        Category::add($name);
+        header("location: index.php?controller=categories");
     }
 
     public function edit()
     {
-        $id = $_GET["id"];
-        $category = Category::get($id);
-        $data = array(
-            'category' => $category
-        );
+        $id= $_GET["id"];
+        $categories = Category::get($id);   
+        $data = array('categories' => $categories);
         $this->render('edit',$data);
     }
 

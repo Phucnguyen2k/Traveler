@@ -1,77 +1,41 @@
-<div class="container">
-    <h2 class="text-center text-uppercase my-5">Admin</h2>
-
-    <ul class="nav nav-pills p-2 mb-4 bg-white rounded">
-    <li class="nav-item ">
-        <a class="nav-link  rounded text-white " href="?controller=posts&action=home">Blogs</a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link rounded active" href="?controller=categories&action=home">Category</a>
-    </li>
-    <li class="nav-item ">
-        <a class="nav-link rounded text-white" href="?controller=members&action=home">Member</a>
-    </li>
-    </ul>
-    <!-- TODO: Rename Category -->
-    <form action="?controller=categories&action=add" method="POST" enctype="multipart/form-data">
-        <div class="d-flex flex-row-reverse">
-           <p>Add New Category</p>
-        </div>
-        <div class="mb-3 d-flex flex-row-reverse">
-            <button type="submit" class="btn btn-primary text-white ml-3 rounded" data-bs-toggle="tooltip" title="Add Category"><i class="fa-solid fa-plus"></i></button>
-            <input type="text" class="form-control rounded w-25" id="title" name="title" required>
-        </div>
-    </form> 
-      
-   <div class="">
-   <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Title</th>
-      
-                <th width="5%" ;>Rename</th>
-                <th width="5%" ;>Delete</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if (!empty($categories)):
-                $count = 0;
-                foreach ($categories as $category):
-                    $count++;
-                    ?>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-12">
+          <div class="card">
+          <div class="card-header">
+                  <h3><p class="text-center text-uppercase">Danh sách Thể loại</p></h3>
+                </div>
+                <a class="btn btn-primary m-3 col-md-2" href="?controller=categories&action=add"><i class="fa-solid fa-plus mr-3"></i>New Category</a>
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
                     <tr>
-                        <th width="3%">
-                            <?php echo $count ?>
-                        </th>
-                        <th>
-                            <?php echo $category->title; ?>
-                            </a>
-                        </th>
-                        <th>
-                            <a href="index.php?controller=categories&action=edit&id=<?php echo $category->id  ?>" class="btn btn-warning btn-sm rounded"><i
-                                    class="fa-solid fa-pen-to-square"></i> </a>
-                        </th>
-                        <th>
-                            <a href="?controller=categories&action=delete&id=<?php echo $category->id  ?>"
-                                onclick="return confirm('Are you sure?')" class="btn btn-danger btn-sm rounded"><i
-                                    class="fa-solid fa-trash"></i> </a>
-                        </th>
+                      <th width="5%">ID</th>
+                      <th>Category</th>
+                      <th width="5%">Edit</th>
+                      <th width="5%">Delete</th>
                     </tr>
-
+                    </thead>
+                    <tbody>
+                      <?php 
+                      $i=1;
+                      foreach ($categories as $categorie):       
+                      ?>
+                    <tr>
+                      <td><?php echo $i++; ?></td>
+                      <td><?php echo $categorie->title ?>
+                      </td>
+                      <td><a href="index.php?controller=categories&action=edit&id=<?php echo $categorie->id; ?>"><p class="btn btn-primary btn-sm"><i class="fa-solid fa-pen-to-square"></i></p></a></td>
+                      <td><a href="index.php?controller=categories&action=delete&id=<?php echo $categorie->id; ?>"><p class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></p></a></td>
+                    </tr>
                     <?php
-                endforeach;
-            else:
-                ?>
-                <tr>
-                    <td class="alert alert-danger text-center" colspan="4">No data</td>
-                </tr>
-                <?php
-            endif;
-            ?> 
-        </tbody>
-    </table>
-   </div>
-    </div>
+                    endforeach;
+                    ?>
+                    </tbody>
+                    </table>                 
+                
+          </div>
+      </div>
+  </div>
 </div>

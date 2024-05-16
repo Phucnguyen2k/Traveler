@@ -1,14 +1,25 @@
-<div class="container mt-5">
+<div class="row">
+    <div class="col-md-12">
+    <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Thông tin Thể Loại</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form method="post" action="index.php?controller=categories&action=save" enctype="multipart/form-data">
+              <input type="hidden" name="id" value = "<?php echo $categories->id; ?>"/>
+                <div class="card-body">                  
+                  <div class="form-group">
+                    <label>Nội dung</label>
+                    <input type="text" class="form-control" name="title" value ="<?php echo $categories->title ; ?>">  
+                  </div>                                                
+                </div>
+                <!-- /.card-body -->
 
-    <h2 class="text-center text-uppercase">Edit Category</h2>
-    <a class="btn btn-primary rounded my-4" href="?controller=categories&action=home"><i class="fa-solid fa-backward"></i> Back</a>
-
-    <form action="index.php?controller=categories&action=save" method="POST" enctype="multipart/form-data">
-        <div class="mb-3">
-            <label for="title" class="form-label">Name Category</label>
-            <input type="text" class="form-control rounded col-4" id="title" name="title" required value="<?php echo $category->title; ?>">
-        </div>
-        <input type="hidden" class="form-control " id="id" name="id" required value="<?php echo $category->id; ?>">
-        <button type="submit" class="btn btn-primary rounded">Update</button>
-    </form>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+              </form>
+            </div>
+</div>
 </div>
